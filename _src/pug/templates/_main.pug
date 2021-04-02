@@ -1,0 +1,16 @@
+include ../modules/_head.pug
+
+body.page-body
+
+  block link-active
+  include ../modules/_header
+
+  .page-body__inner
+
+
+    main.page-main
+      block content
+
+    include ../modules/_footer.pug
+
+  include ../modules/_scripts.pug
