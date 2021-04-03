@@ -13,10 +13,16 @@ mixin svg(name, size, fill)
           use(xlink:href= sprite + '#' + name)
 
 //- img webp
-mixin img(name, type, alt, className, width)
+mixin img(name, type, alt, className, width, height)
   picture
     source(srcset=`/img/webp/${name}.webp` type=`image/webp`)
-    img(class=`${className}` src=`/img/${name}.${type}` alt=alt width=width loading="lazy")
+    img(class=`${className}` src=`/img/${name}.${type}` alt=alt width=width height=height loading="lazy")
+
+
+mixin img-retina(name, type, alt, className, width, height)
+  picture
+    source(srcset=`/img/webp/${name}.webp` type=`image/webp`)
+    img(class=`${className}` src=`/img/${name}.${type}` srcset=`/img/${name}.${type} 1x, /img/${name}@2x.${type} 2x` alt=alt width=width height=height loading="lazy")
 
 mixin img-svg(name, className, alt, width, height)
   img(class=`${className}` src=`/img/svg/${name}.svg` alt=alt width=width height=height loading="lazy")

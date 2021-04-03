@@ -2,8 +2,105 @@ extends ../templates/_main.pug
 include ../helpers/mixins.pug
 
 
-block link-active
+//- block link-active
   //- -const active = 1;
 
 
 block content
+  section.promo.pt80.mb120
+    .promo__inner.container
+      h1.promo__title.title.size-4 Новости группы компаний
+      .promo__col-wrap.column-wrap
+        .promo__col.column-left
+          .promo__list
+            a.promo__item.card.card--wide(href="#")
+              figure.card__img-wrap.card__img-wrap--wide
+
+                picture
+                  source(srcset="/img/webp/new-year.webp" type="image/webp")
+                  img.card__img(src="/img/new-year.jpg" srcset="/img/new-year.jpg 1x, /img/new-year@2x.jpg 2x" loading="lazy" alt="праздник" width="680" height="260")
+
+              .card__content
+                h3.card__title.size-3 Информация по новогоднему корпоративу. Где, когда и как будет проходить празднование?
+                .card__info
+                  p.card__category Отдых
+                  p.card__date 01 декабря 2021 г.
+
+            a.promo__item.card.card--half(href="#")
+              figure.card__img-wrap.card__img-wrap--half
+
+                picture
+                  source(srcset="/img/webp/football.webp" type="image/webp")
+                  img.card__img(src="/img/football.jpg" srcset="/img/football.jpg 1x, /img/football@2x.jpg 2x" loading="lazy" alt="праздник" width="330" height="260")
+
+              .card__content
+                h3.card__title.size-3 Наши футбольные команды заняли призовые места на короративном турнире
+                .card__info
+                  p.card__category Спорт
+                  p.card__date 10 июля 2021 г.
+
+            a.promo__item.card.card--half(href="#")
+              figure.card__img-wrap.card__img-wrap--half
+
+                picture
+                  source(srcset="/img/webp/cups.webp" type="image/webp")
+                  img.card__img(src="/img/cups.jpg" srcset="/img/cups.jpg 1x, /img/cups@2x.jpg 2x" loading="lazy" alt="праздник" width="330" height="260")
+
+              .card__content
+                h3.card__title.size-3 Награждение лучших менелдеров по продажам пройдет в начале января
+                .card__info
+                  p.card__category Жизнь компании
+                  p.card__date 12 мар 2021 г.
+
+          a.promo__link-news.arr-link(href="/news.html")
+            span Посмотреть все новости
+            +svg(`arr`, 20, `#B0B3C6`)
+
+          .promo__slider.promo-slider
+
+            h3.promo-slider__title.size-3
+
+            .promo-slider__wrap
+              - let n = 0;
+              while n < 5
+                - n++
+                a.promo-slider__item.private-card.private-card--slide(href="#")
+                  figure.private-card__img-wrap
+                    +img(`man`, `png`, `Наш именинник`, `private-card__img`, `80`, `80`)
+                  h4.private-card__title.size-1 Иванов Иван Иванович
+                  p.private-card__proff Руководитель отдела продаж
+              - n = 0;
+
+        .promo__col.column-right
+          .promo__birtday.promo-birtday
+            .promo-birtday__head-wrap
+              .promo-birtday__head
+                p.promo-birtday__date 30 сентября
+                h3.promo-birtday__title Сегодня празднуют свои дни рождения:
+              figure.promo-birtday__img-wrap
+                +img-retina(`birthday`, `jpg`, `День рождения`, `promo-birtday__img`, `330`, `126`)
+
+            .promo-birtday__festive
+              while n < 4
+                - n++
+                a.promo-birtday__item.festive-card.festive-card--promo(href="#")
+                  figure.festive-card__img-wrap
+                    +img(`girl`, `png`, `Наш именинник`, `festive-card__img`, `48`, `48`)
+
+                  .festive-card__content
+                    h4.festive-card__name.size-1 Солнечная Александра Александровна
+                    p.festive-card__proff Менеджер по продажам Mercedes Benz
+
+          .promo__library.promo-library
+            h3.promo-library.size-1 Встречайте!<br>Новая книжка в нашей библиотеке
+            a.promo-library__book.book(href="/library.html")
+              figure.book__img-wrap
+                +img(`book`, `png`, `Наш именинник`, `book__img`, `130`, `200`)
+
+              p.book__section Научно-популярная литература
+              h4.book__title.size-1 Sapiens. Краткая история человечества
+              p.book__autor Харари Юваль Ной
+
+            a.promo-library__link(href="/library.html")
+              span Посмотреть всю блиблиотеку
+              +svg(`arr`, 20, `#B0B3C6`)
