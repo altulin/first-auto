@@ -2,12 +2,13 @@ extends ../templates/_main.pug
 include ../helpers/mixins.pug
 
 
+
 //- block link-active
   //- -const active = 1;
 
 
 block content
-  section.promo.pt80.mb120
+  section.promo.mb120
     .promo__inner.container
       h1.promo__title.title.size-4 Новости группы компаний
       .promo__col-wrap.column-wrap
@@ -58,7 +59,7 @@ block content
 
           .promo__slider.promo-slider
 
-            h3.promo-slider__title.size-3
+            h3.promo-slider__title.size-3 Лучшие сотрудники месяца
 
             .promo-slider__wrap
               - let n = 0;
@@ -66,7 +67,7 @@ block content
                 - n++
                 a.promo-slider__item.private-card.private-card--slide(href="#")
                   figure.private-card__img-wrap
-                    +img(`man`, `png`, `Наш именинник`, `private-card__img`, `80`, `80`)
+                    +img(`man2`, `png`, `Наш именинник`, `private-card__img`, `80`, `80`)
                   h4.private-card__title.size-1 Иванов Иван Иванович
                   p.private-card__proff Руководитель отдела продаж
               - n = 0;
@@ -76,23 +77,25 @@ block content
             .promo-birtday__head-wrap
               .promo-birtday__head
                 p.promo-birtday__date 30 сентября
-                h3.promo-birtday__title Сегодня празднуют свои дни рождения:
+                h3.promo-birtday__title Сегодня празднуют<br> свои дни рождения:
               figure.promo-birtday__img-wrap
-                +img-retina(`birthday`, `jpg`, `День рождения`, `promo-birtday__img`, `330`, `126`)
+                +img-retina(`birthday`, `png`, `День рождения`, `promo-birtday__img`, `340`, `126`)
 
-            .promo-birtday__festive
+
+            .promo-birtday__festive.coworker
               while n < 4
                 - n++
-                a.promo-birtday__item.festive-card.festive-card--promo(href="#")
-                  figure.festive-card__img-wrap
-                    +img(`girl`, `png`, `Наш именинник`, `festive-card__img`, `48`, `48`)
+                a.coworker__item.coworker__item--promo(href="#")
+                  figure.coworker__img-wrap
+                    +img(`girl`, `png`, `Наш именинник`, `coworker__img`, `48`, `48`)
 
-                  .festive-card__content
-                    h4.festive-card__name.size-1 Солнечная Александра Александровна
-                    p.festive-card__proff Менеджер по продажам Mercedes Benz
+                  .coworker__content
+                    h4.coworker__name.size-1 Солнечная Александра Александровна
+                    p.coworker__proff Менеджер по продажам Mercedes Benz
+              - n = 0;
 
           .promo__library.promo-library
-            h3.promo-library.size-1 Встречайте!<br>Новая книжка в нашей библиотеке
+            h3.promo-library__title.size-1 Встречайте!<br>Новая книжка в нашей библиотеке
             a.promo-library__book.book(href="/library.html")
               figure.book__img-wrap
                 +img(`book`, `png`, `Наш именинник`, `book__img`, `130`, `200`)
@@ -104,3 +107,6 @@ block content
             a.promo-library__link(href="/library.html")
               span Посмотреть всю блиблиотеку
               +svg(`arr`, 20, `#B0B3C6`)
+
+
+  include ../modules/_anonymous.pug

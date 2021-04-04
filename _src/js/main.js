@@ -1,5 +1,15 @@
 $(function () {
 
+  $('.promo-slider__wrap').slick({
+    variableWidth: true,
+    slidesToShow: 3,
+    slidesToScroll: 2,
+    infinite: true,
+    speed: 500
+  });
+
+
+
   // faq tabs
   // $('#faq-tabs').responsiveTabs({
   //   startCollapsed: 'accordion',

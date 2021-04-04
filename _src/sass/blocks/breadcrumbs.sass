@@ -1,0 +1,33 @@
+.breadcrumbs
+  margin-bottom: 15px
+
+  &__inner
+
+  &__list
+    display: flex
+
+  &__item
+    & + li
+      margin-left: 10px
+      padding-left: 25px
+      position: relative
+
+      &::before
+        content: ""
+        width: 18px
+        height: 18px
+        background-image: url(/img/svg/arr.svg)
+        position: absolute
+        left: 0
+        background-size: contain
+
+  &__link
+    font-weight: 500
+    color: $text
+    display: block
+
+  &__link--active
+    color: #B0B3C6
+    pointer-events: none
+
+.container

@@ -1,0 +1,7 @@
+- const tailesArr = asideArr.get(active)
+section.tiles
+  ul.tiles__list
+    each val in tailesArr
+      li.tiles__item
+        a.tiles__link(href=`/${links.get(val)}.html` class=(iconsArr.get(val) === `` ? `tiles__link--main` : `tiles__link--${iconsArr.get(val)}`) class=(val ===activeTile ? `tiles__link--active` : ``))
+          span= val

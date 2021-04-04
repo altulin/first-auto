@@ -12,10 +12,33 @@
     display: flex
     flex-wrap: wrap
     justify-content: space-between
+    margin-bottom: 10px
 
   &__item
 
   &__link-news
+    height: 60px
+    display: flex
+    align-items: center
+    justify-content: center
+    font-size: 16px
+    font-weight: 500
+    color: #B0B3C6
+    border: 1px solid #E3E5EF
+    border-radius: 4px
+    margin-bottom: 64px
+    transition: 0.2s
+
+    &:hover
+      opacity: 0.5
+
+    & span
+      margin-right: 10px
+
+    & svg
+      stroke: #B0B3C6
+      fill: transparent
+      transform: translateY(2px)
 
   &__slider
 
@@ -38,6 +61,7 @@
 .column-left
   flex-grow: 1
   max-width: 680px
+  min-width: 0
 
 .card
   background: #FFFFFF
@@ -107,24 +131,57 @@
 .icon
 
 .promo-slider
+  background: #FCFCFF
+  border: 1px solid #E0E3EE
+  border-radius: 5px
+  padding-top: 30px
+  padding-left: 30px
+  padding-bottom: 33px
+  width: 100%
 
   &__title
+    margin-bottom: 25px
+    font-weight: 600
 
   &__wrap
+    width: 100%
 
   &__item
 
 .private-card
+  background: #FFFFFF
+  border: 1px solid #E0E3EE
+  display: flex
+  flex-direction: column
+  align-items: center
+  padding-top: 30px
+  padding-bottom: 30px
+  padding-left: 15px
+  padding-right: 15px
+  transition: 0.2s
+
+  &:hover
+    background: #f7f7fa
 
   &__img-wrap
+    margin-bottom: 10px
 
   &__img
 
   &__title
+    font-weight: 600
+    color: $text
+    margin-bottom: 10px
 
   &__proff
+    font-size: 14px
+    color: #B0B3C6
+    font-weight: 500
 
 .private-card--slide
+  border-radius: 5px
+  width: 228px
+  margin-left: 20px
 
 .size-1
 
@@ -134,49 +191,177 @@
   margin-left: 20px
 
 .promo-birtday
+  background: #FFFFFF
+  border: 1px solid #E0E3EE
+  border-radius: 5px
+  margin-bottom: 34px
 
   &__head-wrap
 
   &__head
+    padding-top: 30px
+    padding-left: 30px
+    padding-bottom: 17px
+    display: flex
+    align-items: center
 
   &__date
+    font-size: 14px
+    font-weight: 600
+    color: $white
+    padding: 12px 9px
+    background: #222124
+    border-radius: 5px
+    margin-right: 16px
 
   &__title
+    font-weight: 600
+    font-size: 16px
 
   &__img-wrap
+    position: relative
+    padding-top: 40%
+
+  &__img
+    position: absolute
+    width: 100%
+    height: 100%
+    left: 0
+    top: 0
 
   &__festive
 
   &__item
 
-.festive-card
+.coworker
+
+  &__item
+    display: flex
+    padding-top: 15px
+    padding-bottom: 15px
+    padding-left: 30px
+    padding-right: 30px
+    transition: 0.2s
+    border-top: 1px solid #E0E3EE
+
+    &:hover
+      background: #F7F7FA
+
+  &__item--promo
 
   &__img-wrap
+    width: 48px
+    height: 48px
+    margin-right: 20px
 
   &__img
 
   &__content
 
   &__name
+    font-weight: 600
+    font-size: 14px
+    line-height: 17px
+    margin-bottom: 5px
+    color: $text
 
   &__proff
-
-.festive-card--promo
+    font-weight: 500
+    font-size: 12px
+    line-height: 14px
+    color: #B0B3C6
 
 .promo-library
+  background: #FCFCFF
+  border: 1px solid #E0E3EE
+  box-sizing: border-box
+  border-radius: 5px
+  padding: 30px 30px 30px 30px
+
+  &__title
+    font-weight: 600
+    margin-bottom: 30px
 
   &__book
+    display: flex
+    flex-direction: column
+    background: #FFFFFF
+    border: 1px solid #E0E3EE
+    box-shadow: 0px 5px 20px #EFEFFC
+    border-radius: 5px
+    padding: 30px
+    transition: 0.2s
+    margin-bottom: 38px
+
+    &:hover
+      box-shadow: none
 
   &__link
+    font-weight: 500
+    font-size: 16px
+    line-height: 19px
+    color: #B0B3C6
+    transition: 0.2s
+
+    &:hover
+      opacity: 0.5
+
+    & .icon
+      margin-left: 10px
+
+    & svg
+      stroke: #B0B3C6
+      transform: translateY(4px)
+      fill: transparent
 
 .book
 
   &__img-wrap
+    margin-bottom: 43px
+    align-self: center
 
   &__img
 
   &__section
+    font-weight: 500
+    font-size: 12px
+    color: #ACAFC2
+    background: #F3F4FB
+    border-radius: 2px
+    padding: 5px 3px
+    margin-bottom: 13px
 
   &__title
+    margin-bottom: 5px
+    font-weight: 600
+    font-size: 16px
+    line-height: 19px
+    color: #000000
 
   &__autor
+    font-weight: 500
+    font-size: 12px
+    line-height: 14px
+    color: #90969E
+
+.slick-initialized .slick-slide
+  display: flex
+
+.slick-arrow
+  cursor: pointer
+  width: 20px
+  height: 20px
+  background-image: url(/img/svg/arr.svg)
+  font-size: 0
+  background-color: transparent
+  position: absolute
+  top: -47px
+  right: 30px
+  transition: 0.2s
+
+  &:hover
+    opacity: 0.5
+
+.slick-prev
+  transform: rotate(180deg)
+  right: 60px

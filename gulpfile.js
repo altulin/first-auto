@@ -8,7 +8,7 @@ const projectJsMin = `script.min.js`; // файл в продакшн миниф
 
 // установленные библиотеки js
 const jquery_js = `node_modules/jquery/dist/jquery.min.js`;
-// const jquery_modal_js = `node_modules/jquery-modal/jquery.modal.min.js`;
+const jquery_modal_js = `node_modules/jquery-modal/jquery.modal.min.js`;
 // const mmenu_js = `node_modules/mmenu-light/dist/mmenu-light.js`;
 // const jquery_fajax_js = `node_modules/jquery.fajax/dist/jquery.fajax.min.js`;
 // const jquery_formstyler_js = `node_modules/jquery-form-styler/dist/jquery.formstyler.min.js`;
@@ -22,13 +22,13 @@ const projectCss = `style.css`; // файл в продакшн минифици
 
 // установленные библиотеки css
 const normalize_css = `node_modules/normalize.css/normalize.css`;
-// const jquery_modal_css = `node_modules/jquery-modal/jquery.modal.min.css`;
+const jquery_modal_css = `node_modules/jquery-modal/jquery.modal.min.css`;
 // const mmenu_css = `node_modules/mmenu-light/dist/mmenu-light.css`;
 // const jquery_formstyler_css = `node_modules/jquery-form-styler/dist/jquery.formstyler.css`;
 // const jquery_formstyler_theme_css = `node_modules/jquery-form-styler/dist/jquery.formstyler.theme.css`;
 
 const slick_css = `node_modules/slick-carousel/slick/slick.css`;
-const slick_theme_css = `node_modules/slick-carousel/slick/slick-theme.css`;
+// const slick_theme_css = `node_modules/slick-carousel/slick/slick-theme.css`; не всегда нужно
 
 // img
 // const sourceImg = `${sourceFolder}/_img/**/*`;//папка для разработки
@@ -101,7 +101,7 @@ function browsersync() {
 function scripts() {
   return src([ // Берём файлы из источников
     jquery_js,
-    // jquery_modal_js,
+    jquery_modal_js,
     // mmenu_js,
     // jquery_fajax_js,
     // jquery_formstyler_js,
@@ -123,12 +123,12 @@ function scripts() {
 function styles() {
   return src([// Выбираем источникИ
     normalize_css,
-    // jquery_modal_css,
+    jquery_modal_css,
     // mmenu_css,
     // jquery_formstyler_css,
     // jquery_formstyler_theme_css,
     slick_css,
-    slick_theme_css,
+    // slick_theme_css,
     path.src.libs_css,
     sourceCss
 
@@ -147,7 +147,7 @@ function images() {
   return src(`${sourceFolder}/_img/*.{png,jpg}`) // Берём все изображения из папки источника
     .pipe(newer(projectImg)) // Проверяем, было ли изменено (сжато) изображение ранее
     .pipe(imagemin([
-      imagemin.optipng({ optimizationLevel: 5 }),
+      imagemin.optipng({ optimizationLevel: 3 }),
       imagemin.mozjpeg({ quality: 75, progressive: true }),
 
     ])) // Сжимаем и оптимизируем изображеня

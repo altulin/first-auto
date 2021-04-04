@@ -1,11 +1,11 @@
--const link = [[`О компании`, `about`], [`Новости`, `news`], [`Дни рождения`, `bithday`], [`Библиотека`, `library`], [`Документы`, `documents`]]
+//- include ../helpers/arrays
 
 header.page-header
-  .page-header__box
+  .page-header__box= link
     a.page-header__logo(href="/index.html")
       +img-svg(`logo`, `page-header__logo-img`, `Логотип компании`, `165`, `30`)
-    nav.page-header__nav.header-nav
+    nav.page-header__nav.header-nav#my-menu
       ul.header-nav__list
-        each val, i in link
+        each val, i in header_nav
           li.header-nav__item
-            a.header-nav__link.size-2.hover-opacity(href=`${val[1]}` class=(active===i+1 ? `header-nav__link--active` : ``))= val[0]
+            a.header-nav__link.size-2.hover-opacity(href=`/${links.get(val)}.html` class=(active===links.get(val) ? `header-nav__link--active` : ``))= val

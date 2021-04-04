@@ -1,0 +1,56 @@
+.tiles
+  background: #F7F7FA
+  border: 1px solid #E0E3EE
+  border-radius: 10px
+
+  &__list
+
+  &__item
+    & +li
+      border-top: 1px solid #E6E6EA
+
+  &__link
+    display: block
+    padding-left: 30px
+    padding-top: 30px
+    padding-bottom: 30px
+    color: #46404C
+    font-weight: 500
+    padding-left: 65px
+    position: relative
+
+    &::before
+      position: absolute
+      width: 16px
+      height: 16px
+      content: ""
+      left: 30px
+      top: 30px
+      background-size: contain
+      background-repeat: no-repeat
+
+    &--active
+      background: #FFFFFF
+
+  &__link--main
+    font-size: 18px
+    font-weight: 600
+    color: #47404C
+    padding-left: 30px
+    position: relative
+
+  &__link--port
+    &::before
+      background-image: url(/img/svg/port.svg)
+
+  &__link--struk
+    &::before
+      background-image: url(/img/svg/struk.svg)
+
+  &__link--doc
+    &::before
+      background-image: url(/img/svg/doc.svg)
+
+  &__link--best
+    &::before
+      background-image: url(/img/svg/best.svg)

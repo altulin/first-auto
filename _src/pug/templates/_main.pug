@@ -1,6 +1,7 @@
 include ../modules/_head.pug
 
 body.page-body
+  include ../helpers/arrays
 
   block link-active
   include ../modules/_header
@@ -8,9 +9,13 @@ body.page-body
   .page-body__inner
 
 
-    main.page-main
+    main.page-main.pt80
       block content
 
     include ../modules/_footer.pug
+
+  if anonymous
+    include ../modules/_modal-anonymous.pug
+
 
   include ../modules/_scripts.pug
