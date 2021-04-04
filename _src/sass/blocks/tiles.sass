@@ -18,6 +18,7 @@
     font-weight: 500
     padding-left: 65px
     position: relative
+    transition: 0.2s
 
     &::before
       position: absolute
@@ -29,8 +30,15 @@
       background-size: contain
       background-repeat: no-repeat
 
+    &:hover
+      opacity: 0.5
+
     &--active
       background: #FFFFFF
+      pointer-events: none
+
+      &:hover
+        opacity: 1
 
   &__link--main
     font-size: 18px
@@ -38,6 +46,10 @@
     color: #47404C
     padding-left: 30px
     position: relative
+    pointer-events: none
+
+    &:hover
+      opacity: 1
 
   &__link--port
     &::before
