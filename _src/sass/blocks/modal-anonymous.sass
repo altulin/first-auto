@@ -1,0 +1,124 @@
+.blocker
+  background: rgba(34, 33, 36, 0.6)
+  backdrop-filter: blur(10px)
+  text-align: inherit
+  padding-left: 0
+  padding-right: 0
+
+  &::before
+    content: none
+
+.modal-anonymous
+  width: 100%
+  max-width: 1083px
+  position: absolute
+  left: 292px
+  top: 80px
+  padding: 0
+  background: linear-gradient(180deg, #222124 0%, #262628 100%)
+  border-radius: 10px
+  overflow: hidden
+
+  +mw(1600)
+    left: 50%
+    transform: translateX(-50%)
+
+  +mw(1113)
+    width: calc(100% - 30px)
+
+  +mw(1000)
+    top: 15px
+
+  & a.close-modal
+    background-image: url(../img/svg/modal-close.svg)
+    width: 16px
+    height: 16px
+    top: 30px
+    right: 30px
+    transition: 0.2s
+
+    &:hover
+      opacity: 0.5
+
+  &__inner
+    display: flex
+    justify-content: flex-end
+    position: relative
+    background-image: url(/img/hat-anonim.png)
+    background-repeat: no-repeat
+    background-position: left bottom
+
+  &__title
+    +vh()
+
+  &__img-box
+    width: 64%
+
+  &__img
+    height: 100%
+    width: auto
+
+  &__img-wrap
+    // display: flex
+    // align-items: flex-end
+    position: absolute
+    left: 0
+    top: 0
+    height: 100%
+    width: 64%
+
+.form-anonym
+  max-width: 410px
+  color: $white
+  margin-right: 80px
+  padding-top: 57px
+  padding-bottom: 60px
+
+  &__legend
+    font-weight: 600
+    margin-bottom: 10px
+
+  &__text
+    font-weight: 300
+    margin-bottom: 30px
+
+  &__label
+    +vh()
+
+  &__area
+    background: #202022
+    border: 1px solid #393A41
+    border-radius: 10px
+    height: 200px
+    width: 100%
+    margin-bottom: 20px
+    padding: 20px
+    resize: none
+    color: #393A41
+    font-size: 16px
+    font-weight: 300
+
+    &:focus
+      outline: none
+
+    &::placeholder
+      color: #393A41
+      font-size: 16px
+      font-weight: 300
+
+  &__btn
+    color: #B0B3C6
+    border-radius: 10px
+    padding-top: 20px
+    padding-bottom: 20px
+    background: #202022
+    border: 1px solid #393A41
+    border-radius: 4px
+    width: 100%
+    cursor: pointer
+
+    &:hover
+      opacity: 0.5
+
+.not-valid
+  border-color: red

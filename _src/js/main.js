@@ -10,10 +10,39 @@ $(function () {
 
 
 
-  // faq tabs
-  // $('#faq-tabs').responsiveTabs({
-  //   startCollapsed: 'accordion',
+  // tabs
+  $('.company__main-tabs').responsiveTabs({
+    startCollapsed: 'accordion',
+    click: function (e, tab) {
+      // const name = $(e.target).find(`.main-tabs__link`).attr(`href`).split(`__`)[1];
+      // console.log(name)
 
+      // console.log($(`.main-tabs__cont--${name}`))
+      // $(`.main-tabs__cont--${name} .sub-tabs__accordion`).first().addClass(`open`)
+      // $('.sub-tabs__accordion').accordion({
+      //   "transitionSpeed": 400
+      // });
+      // $(`.main-tabs__cont--${name} .sub-tabs__accordion`).accordion({
+      // "transitionSpeed": 400
+      // });
+      // main-tabs__cont--ford
+    }
+  });
+
+
+  $('.sub-tabs__accordion').accordion({
+    "transitionSpeed": 200
+  });
+
+  $('.documents-accordion').accordion({
+    "transitionSpeed": 200
+  });
+
+
+  // $('.sub-tabs').each((i, item) => {
+  //   $(item).responsiveTabs({
+  //     startCollapsed: 'accordion',
+  //   });
   // });
 
   // programs-phone tabs
@@ -90,68 +119,59 @@ $(function () {
 
 
   //валидация полей форм
-  // $(`.form`).on(`submit`, (e) => {
-  //   checkValidation(e);
-  // });
+  $(`.modal-anonymous__form`).on(`submit`, (e) => {
+    checkValidation(e);
+  });
 
 
-  // const checkValidation = (e) => {
-  //   let flag = false;
-  //   e.preventDefault();
-  //   $(e.target).parent().find(`input:not(".not-req")`).each((i, item) => {
-  //     if ($(item).val().length === 0) {
-  //       $(item).addClass(`not-valid`);
-  //       droppingErr(item);
+  const checkValidation = (e) => {
+    let flag = false;
+    e.preventDefault();
+    $(e.target).parent().find(`.valid`).each((i, item) => {
+      if ($(item).val().length === 0) {
+        $(item).addClass(`not-valid`);
+        droppingErr(item);
 
-  //     } else {
-  //       flag = true;
-  //     }
-  //   })
+      } else {
+        flag = true;
+      }
+    })
 
-  //   if (flag) {
-  //     sendForm(e);
-  //   }
-  // };
+    if (flag) {
+      sendForm(e);
+    }
+  };
 
   // отправка форм
-  // const sendForm = (e) => {
-  //   const form = e.target;
-  //   const data = $(form).serialize();
-  //   $.ajax({
-  //     url: 'https://httpbin.org/anything',
-  //     method: 'post',
-  //     dataType: 'json',
-  //     data: data,
-  //     success: function () {
-  //       successHandler(e)
-  //     }
-  //   });
-  // };
+  const sendForm = (e) => {
+    const form = e.target;
+    const data = $(form).serialize();
+    $.ajax({
+      url: 'https://httpbin.org/anything',
+      method: 'post',
+      dataType: 'json',
+      data: data,
+      success: function () {
+        successHandler(e)
+      }
+    });
+  };
 
-  // const successHandler = (e) => {
-  //   e.target.reset();
+  // после отправки открываем страницу 
+  const successHandler = (e) => {
+    e.target.reset();
 
 
-  //   if (e.target.id === `pay-form`) {
-  //     $(`#modal-success`).modal();
-  //   }
-
-  //   if (e.target.id === `exit-form`) {
-  //     window.open("/office-my-learn.html");
-  //   }
-
-  //   if (e.target.id === `pass-form`) {
-  //     window.open("/exit-link.html");
-  //   }
-  // }
+    window.open("/thanks.html");
+  }
 
 
   //сброс ошибки
-  // const droppingErr = (item) => {
-  //   $(item).on(`click`, () => {
-  //     $(item).removeClass(`not-valid`);
-  //   })
-  // };
+  const droppingErr = (item) => {
+    $(item).on(`click`, () => {
+      $(item).removeClass(`not-valid`);
+    })
+  };
 
 
   // forms test

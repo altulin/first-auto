@@ -8,4 +8,4 @@ header.page-header
       ul.header-nav__list
         each val, i in header_nav
           li.header-nav__item
-            a.header-nav__link.size-2.hover-opacity(href=`/${links.get(val)}.html` class=(active===links.get(val) ? `header-nav__link--active` : ``))= val
+            a.header-nav__link.size-0.hover-opacity(href=`/${links.get(val)}.html` class=(active===links.get(val) ? `header-nav__link--active` : ``))= val

@@ -1,0 +1,60 @@
+extends ../templates/_main.pug
+include ../helpers/mixins.pug
+
+
+
+  block link-active
+    //- -const active = 1;
+    -const active = `about`;
+
+
+block content
+
+  include ../modules/_breadcrumbs
+
+  section.structure.mb120
+    .structure__inner.container
+      h1.structure__title.title.size-4 Структура компании
+      .structure__col-wrap.column-wrap
+        .structure__col.column-left
+          section.company 
+            .company__inner 
+              h2.company__title Структура компании первая автоколонна
+              .company__main-tabs.main-tabs
+                figure.company__img-wrap
+                  +img-svg(`logo-black`, `company__img`, `Логотип компании`, `165`, `30`)
+                ul.main-tabs__list 
+                  each val in main_tabs
+                    li.main-tabs__item
+                      a.main-tabs__link(href=`#main-tab__${val}` class=(`image-${val}`))
+                
+                each val in main_tabs
+                  section.main-tabs__content.sub-tabs(id=(`main-tab__${val}`) class=(`main-tabs__cont--${val}`) data-accordion-group)
+
+                    each item in sub_tabs
+                      //- .sub-tabs__accordion(data-accordion class=(`${item[1]}`=== `sales` ? `open` : ``))
+                      .sub-tabs__accordion(data-accordion)
+                        .sub-tabs__head(data-control)
+                          h3.sub-tabs__title.size-2= item[0]
+                          figure.sub-tabs__img-wrap(class=(`image-${val}`))
+                          figure.sub-tabs__man-wrap
+                            
+                          p.sub-tabs__info 15 сотрудников
+                          figure.sub-tabs__arr-wrap
+
+                        //- h3.sub-tabs__title(data-control)= item[0]
+                        .sub-tabs__content(data-content)
+                          -let n = 0
+                          while n<9
+                            -n++
+                            a.sub-tabs__link.private-card.private-card--structure(href="/personal.html")
+                              figure.private-card__img-wrap
+                                +img(`man2`, `png`, `Наш сотрудник`, `private-card__img`, `80`, `80`)
+                              h4.private-card__title.size-1 Иванов Иван Иванович
+                              p.private-card__proff Руководитель отдела продаж
+
+        .structure__col.column-right
+          - activeTile = `Структура компании`
+          include ../modules/_tiles
+
+  include ../modules/_anonymous.pug

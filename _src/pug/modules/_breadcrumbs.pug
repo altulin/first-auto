@@ -4,4 +4,4 @@ section.breadcrumbs
     ul.breadcrumbs__list
       each val, i in array
         li.breadcrumbs__item
-          a.breadcrumbs__link.size-1(href=`/${links.get(val)}.html` class=(i===array.length-1 ? `breadcrumbs__link--active`: ``))= val
+          a.breadcrumbs__link.size-0(href=`/${links.get(val)}.html` class=(i===array.length-1 ? `breadcrumbs__link--active`: ``))= val

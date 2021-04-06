@@ -1,0 +1,138 @@
+.documents-block
+
+  &__inner
+
+  &__title
+
+  &__col-wrap
+
+  &__col
+
+.mb120
+
+.container
+
+.title
+
+.size-4
+
+.column-wrap
+
+.column-left
+
+.documents
+
+  &__inner
+
+  &__title
+    +vh()
+
+  &__accordion-group
+
+  &__accordion
+
+.documents-accordion
+  background: #fff
+  border: 1px solid #e0e3ee
+  border-radius: 5px
+  cursor: pointer
+
+  & + div
+    margin-top: 20px
+
+  &__control
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    &[data-control]
+      padding-top: 28px
+      padding-bottom: 28px
+
+  &__title
+    font-weight: 600
+    margin-right: auto
+    width: 180px
+
+  &__icon
+    width: 19px
+    height: 24px
+    background-image: url(/img/svg/copy.svg)
+    background-size: contain
+
+  &__info
+    font-weight: 500
+    font-size: 14px
+    color: #B0B3C6
+    margin-left: 10px
+    margin-right: 56px
+
+  &__arr
+    width: 20px
+    height: 20px
+    background-image: url(/img/svg/arr.svg)
+    transition: 0.4s
+
+  &__content
+
+  &__link
+    display: flex
+    padding-left: 30px
+    padding-right: 30px
+    padding-top: 20px
+    padding-bottom: 20px
+    border-bottom: none
+
+    & + a
+      border-top: 1px solid #E0E3EE
+
+  &__link-icon
+    background-image: url(/img/svg/copy-1.svg)
+    width: 15px
+    height: 20px
+    background-size: contain
+
+  &__link-doc
+    font-size: 16px
+    font-weight: 600
+    color: $text
+    margin-left: 20px
+
+  &__link-download
+    font-size: 14px
+    color: #B0B3C6
+    margin-left: auto
+
+.structure
+
+  &__col
+
+.column-right
+
+.tiles
+
+  &__list
+
+  &__item
+
+  &__link
+
+  &__link--main
+
+  &__link--port
+
+  &__link--struk
+
+  &__link--doc
+
+  &__link--active
+
+  &__link--best
+
+.open
+
+  & .documents-accordion__arr
+    transform: rotate(90deg)
+
+  & .documents-accordion__control
+    border-bottom: 1px solid #E0E3EE

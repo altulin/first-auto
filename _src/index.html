@@ -27,11 +27,11 @@
     <div class="page-header__box"><a class="page-header__logo" href="/index.html"><img class="page-header__logo-img" src="/img/svg/logo.svg" alt="Логотип компании" width="165" height="30" loading="lazy"/></a>
       <nav class="page-header__nav header-nav" id="my-menu">
         <ul class="header-nav__list">
-          <li class="header-nav__item"><a class="header-nav__link size-2 hover-opacity" href="/about.html">О компании</a></li>
-          <li class="header-nav__item"><a class="header-nav__link size-2 hover-opacity" href="/news.html">Новости</a></li>
-          <li class="header-nav__item"><a class="header-nav__link size-2 hover-opacity" href="/bithday.html">Дни рождения</a></li>
-          <li class="header-nav__item"><a class="header-nav__link size-2 hover-opacity" href="/library.html">Библиотека</a></li>
-          <li class="header-nav__item"><a class="header-nav__link size-2 hover-opacity" href="/documents.html">Документы</a></li>
+          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity" href="/about.html">О компании</a></li>
+          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity" href="/news.html">Новости</a></li>
+          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity" href="/bithday.html">Дни рождения</a></li>
+          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity" href="/library.html">Библиотека</a></li>
+          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity" href="/gallery.html">Галерея</a></li>
         </ul>
       </nav>
     </div>
@@ -85,23 +85,23 @@
                   </svg></span></a>
               <div class="promo__slider promo-slider">
                 <h3 class="promo-slider__title size-3">Лучшие сотрудники месяца</h3>
-                <div class="promo-slider__wrap"><a class="promo-slider__item private-card private-card--slide" href="#">
+                <div class="promo-slider__wrap"><a class="promo-slider__item private-card private-card--slide" href="/personal.html">
                     <figure class="private-card__img-wrap"><img class="private-card__img" src="/img/man2.png" alt="Наш именинник" width="80" height="80" loading="lazy"/>
                     </figure>
                     <h4 class="private-card__title size-1">Иванов Иван Иванович</h4>
-                    <p class="private-card__proff">Руководитель отдела продаж</p></a><a class="promo-slider__item private-card private-card--slide" href="#">
+                    <p class="private-card__proff">Руководитель отдела продаж</p></a><a class="promo-slider__item private-card private-card--slide" href="/personal.html">
                     <figure class="private-card__img-wrap"><img class="private-card__img" src="/img/man2.png" alt="Наш именинник" width="80" height="80" loading="lazy"/>
                     </figure>
                     <h4 class="private-card__title size-1">Иванов Иван Иванович</h4>
-                    <p class="private-card__proff">Руководитель отдела продаж</p></a><a class="promo-slider__item private-card private-card--slide" href="#">
+                    <p class="private-card__proff">Руководитель отдела продаж</p></a><a class="promo-slider__item private-card private-card--slide" href="/personal.html">
                     <figure class="private-card__img-wrap"><img class="private-card__img" src="/img/man2.png" alt="Наш именинник" width="80" height="80" loading="lazy"/>
                     </figure>
                     <h4 class="private-card__title size-1">Иванов Иван Иванович</h4>
-                    <p class="private-card__proff">Руководитель отдела продаж</p></a><a class="promo-slider__item private-card private-card--slide" href="#">
+                    <p class="private-card__proff">Руководитель отдела продаж</p></a><a class="promo-slider__item private-card private-card--slide" href="/personal.html">
                     <figure class="private-card__img-wrap"><img class="private-card__img" src="/img/man2.png" alt="Наш именинник" width="80" height="80" loading="lazy"/>
                     </figure>
                     <h4 class="private-card__title size-1">Иванов Иван Иванович</h4>
-                    <p class="private-card__proff">Руководитель отдела продаж</p></a><a class="promo-slider__item private-card private-card--slide" href="#">
+                    <p class="private-card__proff">Руководитель отдела продаж</p></a><a class="promo-slider__item private-card private-card--slide" href="/personal.html">
                     <figure class="private-card__img-wrap"><img class="private-card__img" src="/img/man2.png" alt="Наш именинник" width="80" height="80" loading="lazy"/>
                     </figure>
                     <h4 class="private-card__title size-1">Иванов Иван Иванович</h4>
@@ -186,7 +186,19 @@
     </footer>
   </div>
   <section class="modal-anonymous modal" id="modal-anonymous">
-    <h2>ghbdtn</h2>
+    <div class="modal-anonymous__inner"> 
+      <h2 class="modal-anonymous__title">Форма анонимной связи</h2>
+      <figure class="modal-anonymous__img-wrap"> </figure>
+      <form class="modal-anonymous__form form-anonym" id="form-anonym" method="post" action="#" name="form-anonym">
+        <fieldset class="form-anonym__field"> 
+          <legend class="form-anonym__legend size-3">Есть предложения по улучшению качества работы или Вы просто чем-то недовольны</legend>
+          <p class="form-anonym__text size-1">Напишите нам об этом - это ананимно</p>
+          <label class="form-anonym__label" for="form-anonym__area">Введите ананимное сообщение</label>
+          <textarea class="form-anonym__area valid" id="form-anonym__area" placeholder="Введите ананимное сообщение" autofocus="true" name="form-anonym__area"></textarea>
+        </fieldset>
+        <button class="form-anonym__btn size-1" type="submit">Отправить</button>
+      </form>
+    </div>
   </section>
   <script src="js/script.js" type="module"></script>
 </body>

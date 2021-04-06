@@ -1,0 +1,57 @@
+extends ../templates/_main.pug
+include ../helpers/mixins.pug
+
+
+
+  block link-active
+    //- -const active = 1;
+    -const active = `about`;
+
+
+block content
+
+  include ../modules/_breadcrumbs
+
+  section.documents-block.mb120
+    .documents-block__inner.container
+      h1.documents-block__title.title.size-4 Документы
+      .documents-block__col-wrap.column-wrap
+        .documents-block__col.column-left
+          section.documents 
+            .documents__inner
+              h2.documents__title Документы  нашей компании
+              .documents__accordion-group(data-accordion-group)
+
+                -let n = 0
+                while n<4
+                  -n++
+                  .documents__accordion.documents-accordion(data-accordion)
+                    .documents-accordion__control(data-control)
+                      h3.documents-accordion__title.size-2 Общие документы
+                      figure.documents-accordion__icon 
+                      p.documents-accordion__info 10 документов
+                      figure.documents-accordion__arr 
+                    .documents-accordion__content(data-content)
+                      -let m = 0
+                      while m<5
+                        -m++
+                        a.documents-accordion__link(href=`/file/test.png` download)
+                          figure.documents-accordion__link-icon
+                          p.documents-accordion__link-doc Заявление на отпуск
+                          p.documents-accordion__link-download Скачать документ
+                      -m=0
+                -n = 0
+
+                    
+
+
+
+
+
+              
+
+        .structure__col.column-right
+          - activeTile = `Документы`
+          include ../modules/_tiles
+
+  include ../modules/_anonymous.pug
