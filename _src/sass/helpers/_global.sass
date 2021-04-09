@@ -4,8 +4,8 @@
   box-sizing: inherit
 
 * // adaptive slick slider
-  // min-width: 0
-  // min-height: 0
+  min-width: 0
+  min-height: 0
 
 html
   box-sizing: border-box
@@ -13,6 +13,7 @@ html
 
   +mw(768)
     // font-size: calc(16px + 6 * ((100vw - 320px) / 680))
+    font-size: 18px
 
 body
   color: $text
@@ -72,8 +73,6 @@ button
 
 .size-1
   font-size: rem(16)
-  // +font-size(1.125rem)
-  // line-height: rem(24)
 
 .size-2
   font-size: rem(18)
@@ -90,6 +89,9 @@ button
   margin-right: auto
   padding-left: 15px
   padding-right: 15px
+
+  &--middle
+    max-width: 950px
 
 .hover-opacity
   transition: 0.2s
@@ -124,6 +126,9 @@ button
 
 .mb120
   margin-bottom: 120px
+
+  +mw(768)
+    margin-bottom: 60px
 
 *
   // outline: 1px solid tomato

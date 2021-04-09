@@ -12,45 +12,38 @@ block content
 
   include ../modules/_breadcrumbs
 
-  section.documents-block.mb120
-    .documents-block__inner.container
-      h1.documents-block__title.title.size-4 Документы
-      .documents-block__col-wrap.column-wrap
-        .documents-block__col.column-left
-          section.documents
-            .documents__inner
-              h2.documents__title Документы  нашей компании
-              .documents__accordion-group(data-accordion-group)
+  section.best-block.mb120
+    .best-block__inner.container
+      h1.best-block__title.title.size-4 Лучшие сотрудники месяца
+      .best-block__col-wrap.column-wrap
+        .best-block__col.column-left
+          section.best
+            .best__inner
+              h2.best__title Документы  нашей компании
+              .best__main-tabs.main-tabs
+                
+                ul.main-tabs__list
+                  each val in main_tabs
+                    li.main-tabs__item
+                      a.main-tabs__link(href=`#main-tab__${val}` class=(`image-${val}`))
 
-                -let n = 0
-                while n<4
-                  -n++
-                  .documents__accordion.documents-accordion(data-accordion)
-                    .documents-accordion__control(data-control)
-                      h3.documents-accordion__title.size-2 Общие документы
-                      figure.documents-accordion__icon
-                      p.documents-accordion__info 10 документов
-                      figure.documents-accordion__arr
-                    .documents-accordion__content(data-content)
-                      -let m = 0
-                      while m<5
-                        -m++
-                        a.documents-accordion__link(href=`/file/test.png` download)
-                          figure.documents-accordion__link-icon
-                          p.documents-accordion__link-doc Заявление на отпуск
-                          p.documents-accordion__link-download Скачать документ
-                      -m=0
-                -n = 0
+                each val in main_tabs
+                  section.main-tabs__content.sub-tabs.best-tabs(id=(`main-tab__${val}`) class=(`main-tabs__cont--${val}`) data-accordion-group)
+                    h3.best-tabs__title.size-3 Лучшие сотрудники месяца 
+                      span.best-tabs__brand= `${val}`
 
-
+                    .sub-tabs__content(data-content)
+                          -let n = 0
+                          while n<3
+                            -n++
+                            a.sub-tabs__link.private-card.private-card--structure(href="/personal.html")
+                              figure.private-card__img-wrap
+                                +img(`man2`, `png`, `Наш сотрудник`, `private-card__img`, `80`, `80`)
+                              h4.private-card__title.size-1 Иванов Иван Иванович
+                              p.private-card__proff Руководитель отдела продаж
 
 
-
-
-
-
-
-        .documents-block__col.column-right
+        .best-block__col.column-right
           - activeTile = `Лучшие сотрудники`
           include ../modules/_tiles
 

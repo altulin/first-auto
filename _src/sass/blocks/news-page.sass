@@ -1,0 +1,20 @@
+.news-page
+
+  &__list
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+
+  &__item
+    width: calc((100% / 3) - (80px / 3))
+
+    +mw(1200)
+      width: calc((100% / 3) - 10px)
+
+    +mw(768)
+      width: 100%
+
+.card
+
+  &__img-wrap--third
+    padding-top: 62%

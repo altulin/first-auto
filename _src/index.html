@@ -24,14 +24,27 @@
 </html>
 <body class="page-body">
   <header class="page-header">
-    <div class="page-header__box"><a class="page-header__logo" href="/index.html"><img class="page-header__logo-img" src="/img/svg/logo.svg" alt="Логотип компании" width="165" height="30" loading="lazy"/></a>
+    <div class="page-header__box"><a class="page-header__logo" href="/index.html"><img class="page-header__logo-img" src="/img/svg/logo.svg" alt="Логотип компании" width="165" height="30" loading="lazy"/></a><a class="page-header__link page-header__link--open" href="#my-menu"><span>Open the menu</span></a>
+<a class="page-header__link page-header__link--close hidden" href="#my-menu"><span>Close the menu</span></a>
       <nav class="page-header__nav header-nav" id="my-menu">
         <ul class="header-nav__list">
-          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity" href="/about.html">О компании</a></li>
-          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity" href="/news.html">Новости</a></li>
-          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity" href="/bithday.html">Дни рождения</a></li>
-          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity" href="/library.html">Библиотека</a></li>
-          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity" href="/gallery.html">Галерея</a></li>
+          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity" href="/about.html">О компании</a>
+            <ul class="tiles__list tiles__list--header">
+              <li class="tiles__item"><a class="tiles__link tiles__link--main" href="/about.html"><span>О компании</span></a></li>
+              <li class="tiles__item"><a class="tiles__link tiles__link--port" href="/about.html"><span>История компании</span></a></li>
+              <li class="tiles__item"><a class="tiles__link tiles__link--struk" href="/structure.html"><span>Структура компании</span></a></li>
+              <li class="tiles__item"><a class="tiles__link tiles__link--doc" href="/documents.html"><span>Документы</span></a></li>
+              <li class="tiles__item"><a class="tiles__link tiles__link--best" href="/best.html"><span>Лучшие сотрудники</span></a></li>
+            </ul>
+          </li>
+          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity" href="/news.html">Новости</a>
+          </li>
+          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity" href="/bithday.html">Дни рождения</a>
+          </li>
+          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity" href="/library.html">Библиотека</a>
+          </li>
+          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity" href="/gallery.html">Галерея</a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -43,10 +56,10 @@
           <h1 class="promo__title title size-4">Новости группы компаний</h1>
           <div class="promo__col-wrap column-wrap">
             <div class="promo__col column-left">
-              <div class="promo__list"><a class="promo__item card card--wide" href="#">
+              <div class="promo__list"><a class="promo__item card card--wide" href="/news-one.html">
                   <figure class="card__img-wrap card__img-wrap--wide">
                     <picture>
-                      <source srcset="/img/webp/new-year.webp" type="image/webp"><img class="card__img" src="/img/new-year.jpg" srcset="/img/new-year.jpg 1x, /img/new-year@2x.jpg 2x" loading="lazy" alt="праздник" width="680" height="260">
+                      <source media="(max-width: 600px)" srcset="/img/novelty.jpg 1x, /img/novelty@2x.jpg 2x"><img class="card__img" src="/img/new-year.jpg" srcset="/img/new-year.jpg 1x, /img/new-year@2x.jpg 2x" loading="lazy" alt="праздник" width="680" height="260">
                     </picture>
                   </figure>
                   <div class="card__content">
@@ -55,11 +68,9 @@
                       <p class="card__category">Отдых</p>
                       <p class="card__date">01 декабря 2021 г.</p>
                     </div>
-                  </div></a><a class="promo__item card card--half" href="#">
+                  </div></a><a class="promo__item card card--half" href="/news-one.html">
                   <figure class="card__img-wrap card__img-wrap--half">
-                    <picture>
-                      <source srcset="/img/webp/football.webp" type="image/webp"><img class="card__img" src="/img/football.jpg" srcset="/img/football.jpg 1x, /img/football@2x.jpg 2x" loading="lazy" alt="праздник" width="330" height="260">
-                    </picture>
+                    <picture><img class="card__img" src="/img/football.jpg" srcset="/img/football.jpg 1x, /img/football@2x.jpg 2x" loading="lazy" alt="праздник" width="330" height="260"></picture>
                   </figure>
                   <div class="card__content">
                     <h3 class="card__title size-3">Наши футбольные команды заняли призовые места на короративном турнире</h3>
@@ -69,9 +80,7 @@
                     </div>
                   </div></a><a class="promo__item card card--half" href="#">
                   <figure class="card__img-wrap card__img-wrap--half">
-                    <picture>
-                      <source srcset="/img/webp/cups.webp" type="image/webp"><img class="card__img" src="/img/cups.jpg" srcset="/img/cups.jpg 1x, /img/cups@2x.jpg 2x" loading="lazy" alt="праздник" width="330" height="260">
-                    </picture>
+                    <picture><img class="card__img" src="/img/cups.jpg" srcset="/img/cups.jpg 1x, /img/cups@2x.jpg 2x" loading="lazy" alt="праздник" width="330" height="260"></picture>
                   </figure>
                   <div class="card__content">
                     <h3 class="card__title size-3">Награждение лучших менелдеров по продажам пройдет в начале января</h3>
@@ -119,25 +128,25 @@
                   <figure class="promo-birtday__img-wrap"><img class="promo-birtday__img" src="/img/birthday.png" srcset="/img/birthday.png 1x, /img/birthday@2x.png 2x" alt="День рождения" width="340" height="126" loading="lazy"/>
                   </figure>
                 </div>
-                <div class="promo-birtday__festive coworker"><a class="coworker__item coworker__item--promo" href="#">
+                <div class="promo-birtday__festive coworker"><a class="coworker__item coworker__item--promo" href="/personal.html">
                     <figure class="coworker__img-wrap"><img class="coworker__img" src="/img/girl.png" alt="Наш именинник" width="48" height="48" loading="lazy"/>
                     </figure>
                     <div class="coworker__content">
                       <h4 class="coworker__name size-1">Солнечная Александра Александровна</h4>
                       <p class="coworker__proff">Менеджер по продажам Mercedes Benz</p>
-                    </div></a><a class="coworker__item coworker__item--promo" href="#">
+                    </div></a><a class="coworker__item coworker__item--promo" href="/personal.html">
                     <figure class="coworker__img-wrap"><img class="coworker__img" src="/img/girl.png" alt="Наш именинник" width="48" height="48" loading="lazy"/>
                     </figure>
                     <div class="coworker__content">
                       <h4 class="coworker__name size-1">Солнечная Александра Александровна</h4>
                       <p class="coworker__proff">Менеджер по продажам Mercedes Benz</p>
-                    </div></a><a class="coworker__item coworker__item--promo" href="#">
+                    </div></a><a class="coworker__item coworker__item--promo" href="/personal.html">
                     <figure class="coworker__img-wrap"><img class="coworker__img" src="/img/girl.png" alt="Наш именинник" width="48" height="48" loading="lazy"/>
                     </figure>
                     <div class="coworker__content">
                       <h4 class="coworker__name size-1">Солнечная Александра Александровна</h4>
                       <p class="coworker__proff">Менеджер по продажам Mercedes Benz</p>
-                    </div></a><a class="coworker__item coworker__item--promo" href="#">
+                    </div></a><a class="coworker__item coworker__item--promo" href="/personal.html">
                     <figure class="coworker__img-wrap"><img class="coworker__img" src="/img/girl.png" alt="Наш именинник" width="48" height="48" loading="lazy"/>
                     </figure>
                     <div class="coworker__content">
@@ -147,12 +156,16 @@
                 </div>
               </div>
               <div class="promo__library promo-library">
-                <h3 class="promo-library__title size-1">Встречайте!<br>Новая книжка в нашей библиотеке</h3><a class="promo-library__book book" href="/library.html">
-                  <figure class="book__img-wrap"><img class="book__img" src="/img/book.png" alt="Наш именинник" width="130" height="200" loading="lazy"/>
-                  </figure>
-                  <p class="book__section">Научно-популярная литература</p>
-                  <h4 class="book__title size-1">Sapiens. Краткая история человечества</h4>
-                  <p class="book__autor">Харари Юваль Ной</p></a><a class="promo-library__link" href="/library.html"><span>Посмотреть всю блиблиотеку</span><span class="icon" aria-hidden="true">
+                <h3 class="promo-library__title size-1">Встречайте!<br>Новая книжка в нашей библиотеке</h3><a class="promo-library__book book" href="/book.html">
+                  <div class="book__inner">
+                    <figure class="book__img-wrap"><img class="book__img" src="/img/book.png" alt="Наш именинник" width="130" height="200" loading="lazy"/>
+                    </figure>
+                  </div>
+                  <div class="book__cont">
+                    <p class="book__section">Научно-популярная литература</p>
+                    <h4 class="book__title size-1">Sapiens. Краткая история человечества</h4>
+                    <p class="book__autor">Харари Юваль Ной</p>
+                  </div></a><a class="promo-library__link" href="/library.html"><span>Посмотреть всю блиблиотеку</span><span class="icon" aria-hidden="true">
                     <svg viewBox="0 0 20 20" width="20" height="20" fill="#B0B3C6">
                       <use xlink:href="/img/sprite.svg#arr"></use>
                     </svg></span></a>
@@ -168,7 +181,7 @@
             <figure class="anonymous__img-wrap"><img class="anonymous__img" src="/img/hat.png" srcset="/img/hat.png 1x, /img/hat@2x.png 2x" alt="Напишите нам ананимно" width="488" height="254" loading="lazy"/>
             </figure>
           </div>
-          <p class="anonymous__text size-3">Есть предложения<br>по улучшению качества работы или Вы просто чем-то недовольны</p>
+          <p class="anonymous__text size-3">Есть предложения<br> по улучшению качества работы или Вы просто чем-то недовольны</p>
           <div class="anonymous__cont">
             <p class="anonymous__cont-text size-1">Напишите нам об этом - это ананимно</p><a class="anonymous__link" href="#modal-anonymous" rel="modal:open"><span class="anonymous__link-text size-1">Написать анонимно</span><span class="icon" aria-hidden="true">
                 <svg viewBox="0 0 20 20" width="20" height="20" fill="#B0B3C6">
@@ -181,7 +194,7 @@
     <footer class="page-footer">
       <div class="page-footer__inner">
         <p class="page-footer__copy">© Первая Автоколонна</p>
-        <p class="page-footer__portal">Внутренний портал для сотрудников</p><a class="page-footer__anonim-link hover-opacity" href="#">Написать анонимно</a>
+        <p class="page-footer__portal">Внутренний портал для сотрудников</p><a class="page-footer__anonim-link hover-opacity" href="#modal-anonymous" rel="modal:open">Написать анонимно</a>
       </div>
     </footer>
   </div>

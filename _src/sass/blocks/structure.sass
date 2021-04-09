@@ -1,6 +1,11 @@
 
 .company
 
+  & .main-tabs__link
+
+    +mw(600)
+      background-size: contain
+
   &__inner
 
   &__title
@@ -31,8 +36,12 @@
     border-radius: 0 0 5px 5px
     border-top: none
 
+    & .main-tabs__link
+      +mw(600)
+        // background-size: contain
+
   &__item
-    width: calc(100% / 7)
+    width: calc(100% / 5)
 
     & + li
       border-left: 1px solid #E0E3EE
@@ -55,6 +64,13 @@
     border: 1px solid #E0E3EE
     border-radius: 5px
 
+    & .sub-tabs__img-wrap
+
+      +mw(600)
+        background-size: contain
+        max-width: 45px
+        margin-right: 10px
+
     & +div
       margin-top: 20px
 
@@ -62,6 +78,9 @@
     font-weight: 600
     margin-right: auto
     max-width: 180px
+
+    +mw(600)
+      max-width: 210px
 
   &__head
     display: flex
@@ -92,7 +111,9 @@
   &__man-wrap
     width: 80px
     height: 40px
-    // background-image: url(/img/group.png)
+
+    +mw(768)
+      display: none
 
   &__man-img
 
@@ -103,8 +124,11 @@
     margin-left: 20px
     margin-right: 50px
     font-weight: 500
-    font-size: 14px
+    font-size: 0.875rem
     color: #B0B3C6
+
+    +mw(600)
+      display: none
 
 .open
 
@@ -116,6 +140,10 @@
   &--structure
     width: calc(100% / 3)
     border-width: 0.5px
+
+    +mw(600)
+      width: 100%
+      margin-bottom: 20px
 
     &:hover
       background-color: #F7F7FA
@@ -153,6 +181,11 @@
   & .main-tabs__list
     margin-bottom: 20px
 
+    +mw(768)
+      display: flex
+      height: 50px
+      // flex-wrap: wrap
+
   & .main-tabs__content
     padding: 0
 
@@ -170,3 +203,7 @@
   padding-top: 15px
   padding-bottom: 16px
   border-bottom: none
+
+  +mw(600)
+    padding-left: 15px
+    padding-right: 15px

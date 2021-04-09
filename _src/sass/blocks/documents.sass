@@ -60,12 +60,18 @@
     background-image: url(/img/svg/copy.svg)
     background-size: contain
 
+    +mw(600)
+      display: none
+
   &__info
     font-weight: 500
-    font-size: 14px
+    font-size: 0.875rem
     color: #B0B3C6
     margin-left: 10px
     margin-right: 56px
+
+    +mw(600)
+      display: none
 
   &__arr
     width: 20px
@@ -73,15 +79,18 @@
     background-image: url(/img/svg/arr.svg)
     transition: 0.4s
 
-  &__content
-
   &__link
     display: flex
+    align-items: center
     padding-left: 30px
     padding-right: 30px
     padding-top: 20px
     padding-bottom: 20px
     border-bottom: none
+
+    +mw(600)
+      padding-left: 15px
+      padding-right: 15px
 
     & + a
       border-top: 1px solid #E0E3EE
@@ -92,14 +101,20 @@
     height: 20px
     background-size: contain
 
+    +mw(600)
+      display: none
+
   &__link-doc
-    font-size: 16px
+    font-size: 1rem
     font-weight: 600
     color: $text
     margin-left: 20px
 
+    +mw(600)
+      margin-left: 0
+
   &__link-download
-    font-size: 14px
+    font-size: 0.875rem
     color: #B0B3C6
     margin-left: auto
 

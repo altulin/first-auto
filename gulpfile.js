@@ -9,7 +9,8 @@ const projectJsMin = `script.min.js`; // файл в продакшн миниф
 // установленные библиотеки js
 const jquery_js = `node_modules/jquery/dist/jquery.min.js`;
 const jquery_modal_js = `node_modules/jquery-modal/jquery.modal.min.js`;
-// const mmenu_js = `node_modules/mmenu-light/dist/mmenu-light.js`;
+// const swiper_js = `node_modules/swiper/swiper-bundle.min.js`;
+const mmenu_js = `node_modules/mmenu-light/dist/mmenu-light.js`;
 // const jquery_fajax_js = `node_modules/jquery.fajax/dist/jquery.fajax.min.js`;
 // const jquery_formstyler_js = `node_modules/jquery-form-styler/dist/jquery.formstyler.min.js`;
 const slick_js = `node_modules/slick-carousel/slick/slick.min.js`;
@@ -18,12 +19,13 @@ const slick_js = `node_modules/slick-carousel/slick/slick.min.js`;
 const sourceCss = `${sourceFolder}/sass/style.sass` // файл для разработки Пользовательские стили
 // const projectCss = `style.css`; // файл в продакшн
 const projectCssMin = `style.min.css`; // файл в продакшн минифицированный
-const projectCss = `style.css`; // файл в продакшн минифицированный
+// const projectCss = `style.css`; // файл в продакшн минифицированный
 
 // установленные библиотеки css
 const normalize_css = `node_modules/normalize.css/normalize.css`;
 const jquery_modal_css = `node_modules/jquery-modal/jquery.modal.min.css`;
-// const mmenu_css = `node_modules/mmenu-light/dist/mmenu-light.css`;
+// const swiper_css = `node_modules/swiper/swiper-bundle.min.css`;
+const mmenu_css = `node_modules/mmenu-light/dist/mmenu-light.css`;
 // const jquery_formstyler_css = `node_modules/jquery-form-styler/dist/jquery.formstyler.css`;
 // const jquery_formstyler_theme_css = `node_modules/jquery-form-styler/dist/jquery.formstyler.theme.css`;
 
@@ -102,7 +104,8 @@ function scripts() {
   return src([ // Берём файлы из источников
     jquery_js,
     jquery_modal_js,
-    // mmenu_js,
+    // swiper_js,
+    mmenu_js,
     // jquery_fajax_js,
     // jquery_formstyler_js,
     slick_js,
@@ -124,7 +127,8 @@ function styles() {
   return src([// Выбираем источникИ
     normalize_css,
     jquery_modal_css,
-    // mmenu_css,
+    // swiper_css,
+    mmenu_css,
     // jquery_formstyler_css,
     // jquery_formstyler_theme_css,
     slick_css,

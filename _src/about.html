@@ -24,14 +24,27 @@
 </html>
 <body class="page-body">
   <header class="page-header">
-    <div class="page-header__box"><a class="page-header__logo" href="/index.html"><img class="page-header__logo-img" src="/img/svg/logo.svg" alt="Логотип компании" width="165" height="30" loading="lazy"/></a>
+    <div class="page-header__box"><a class="page-header__logo" href="/index.html"><img class="page-header__logo-img" src="/img/svg/logo.svg" alt="Логотип компании" width="165" height="30" loading="lazy"/></a><a class="page-header__link page-header__link--open" href="#my-menu"><span>Open the menu</span></a>
+<a class="page-header__link page-header__link--close hidden" href="#my-menu"><span>Close the menu</span></a>
       <nav class="page-header__nav header-nav" id="my-menu">
         <ul class="header-nav__list">
-          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity header-nav__link--active" href="/about.html">О компании</a></li>
-          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity" href="/news.html">Новости</a></li>
-          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity" href="/bithday.html">Дни рождения</a></li>
-          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity" href="/library.html">Библиотека</a></li>
-          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity" href="/gallery.html">Галерея</a></li>
+          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity header-nav__link--active" href="/about.html">О компании</a>
+            <ul class="tiles__list tiles__list--header">
+              <li class="tiles__item"><a class="tiles__link tiles__link--main" href="/about.html"><span>О компании</span></a></li>
+              <li class="tiles__item"><a class="tiles__link tiles__link--port" href="/about.html"><span>История компании</span></a></li>
+              <li class="tiles__item"><a class="tiles__link tiles__link--struk" href="/structure.html"><span>Структура компании</span></a></li>
+              <li class="tiles__item"><a class="tiles__link tiles__link--doc" href="/documents.html"><span>Документы</span></a></li>
+              <li class="tiles__item"><a class="tiles__link tiles__link--best" href="/best.html"><span>Лучшие сотрудники</span></a></li>
+            </ul>
+          </li>
+          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity" href="/news.html">Новости</a>
+          </li>
+          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity" href="/bithday.html">Дни рождения</a>
+          </li>
+          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity" href="/library.html">Библиотека</a>
+          </li>
+          <li class="header-nav__item"><a class="header-nav__link size-0 hover-opacity" href="/gallery.html">Галерея</a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -86,7 +99,7 @@
     <footer class="page-footer">
       <div class="page-footer__inner">
         <p class="page-footer__copy">© Первая Автоколонна</p>
-        <p class="page-footer__portal">Внутренний портал для сотрудников</p><a class="page-footer__anonim-link hover-opacity" href="#">Написать анонимно</a>
+        <p class="page-footer__portal">Внутренний портал для сотрудников</p><a class="page-footer__anonim-link hover-opacity" href="#modal-anonymous" rel="modal:open">Написать анонимно</a>
       </div>
     </footer>
   </div>

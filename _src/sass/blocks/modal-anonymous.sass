@@ -48,6 +48,10 @@
     background-repeat: no-repeat
     background-position: left bottom
 
+    +mw(600)
+      padding-left: 15px
+      padding-right: 15px
+
   &__title
     +vh()
 
@@ -59,8 +63,6 @@
     width: auto
 
   &__img-wrap
-    // display: flex
-    // align-items: flex-end
     position: absolute
     left: 0
     top: 0
@@ -73,6 +75,10 @@
   margin-right: 80px
   padding-top: 57px
   padding-bottom: 60px
+
+  +mw(600)
+    max-width: none
+    margin-right: 0
 
   &__legend
     font-weight: 600
@@ -95,15 +101,18 @@
     padding: 20px
     resize: none
     color: #393A41
-    font-size: 16px
+    font-size: 1rem
     font-weight: 300
+
+    +mw(600)
+      opacity: 0.9
 
     &:focus
       outline: none
 
     &::placeholder
       color: #393A41
-      font-size: 16px
+      font-size: 1rem
       font-weight: 300
 
   &__btn

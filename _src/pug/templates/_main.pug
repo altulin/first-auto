@@ -8,8 +8,8 @@ body.page-body
 
   .page-body__inner
 
-
-    main.page-main.pt80
+    block page-main
+    main.page-main.pt80(class=(page_main ? `page-main--${page_main}` : ``))
       block content
 
     include ../modules/_footer.pug

@@ -1,0 +1,68 @@
+.book-page
+  margin-top: 30px
+
+  &__col--left
+    align-self: flex-start
+
+  &__img
+
+    +mw(600)
+      width: 200px
+
+  &__head
+    margin-bottom: 52px
+
+  &__section
+    font-weight: 500
+    font-size: 0.75rem
+    line-height: 14px
+    color: #ACAFC2
+    margin-bottom: 12px
+
+  &__title
+    margin-bottom: 10px
+
+  &__autor
+    font-weight: 500
+    font-size: 1rem
+    line-height: 19px
+    color: #ACAFC2
+
+  &__service
+    font-weight: 600
+    font-size: 1rem
+    line-height: 19px
+    margin-bottom: 20px
+
+  &__text
+    font-size: 1rem
+    line-height: 24px
+
+    & + .book-page__text
+      margin-top: 20px
+
+.column-left--half
+  flex-grow: 1
+  flex-shrink: 0
+  max-width: 532px
+  background: #FFFFFF
+  border: 1px solid #E0E3EE
+  box-shadow: 0px 5px 20px #EFEFFC
+  border-radius: 5px
+  padding-top: 44px
+  padding-bottom: 44px
+  display: flex
+  justify-content: center
+
+  +mw(768)
+    width: 100%
+    max-width: none
+    margin-bottom: 20px
+
+.column-right--half
+  max-width: 488px
+  margin-left: 20px
+
+  +mw(768)
+    margin-left: 0
+    max-width: none

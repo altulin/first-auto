@@ -1,6 +1,9 @@
 .page-body
   display: flex
 
+  +mw(1000)
+    flex-direction: column
+
   &__inner
     background-color: #F7F7FA
     flex-grow: 1
@@ -10,3 +13,9 @@
 
 .page-main
   max-width: 1212px
+
+  +mw(768)
+  padding-top: 50px
+
+  &--middle
+    max-width: 1050px

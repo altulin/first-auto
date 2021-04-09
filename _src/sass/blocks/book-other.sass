@@ -1,0 +1,19 @@
+.book-other
+
+  &__list
+    max-width: 920px
+    display: flex
+    justify-content: space-between
+
+    +mw(600)
+      flex-direction: column
+
+  &__item
+    width: calc((100% / 3) - (80px / 3))
+
+    +mw(768)
+      width: calc( (100% / 3) - 10px )
+
+    +mw(600)
+      width: 100%
+      margin-bottom: 20px

@@ -1,0 +1,179 @@
+.gallery
+
+  &__inner
+
+  &__title
+
+  &__col-wrap
+
+  &__col
+
+  &__link
+    display: block
+
+.mb120
+
+.container
+
+.title
+
+.column-wrap
+
+.column-left
+
+.post
+  border-radius: 5px
+  overflow: hidden
+
+  & + .post
+    margin-top: 40px
+
+  &:hover .post__block
+    background: #F7F7FA
+
+  &__img-wrap
+    padding-top: 38%
+    position: relative
+
+    +mw(600)
+      padding-top: 60%
+
+  &__img
+    position: absolute
+    width: 100%
+    height: 100%
+    left: 0
+    top: 0
+
+.post-block
+
+  &__wrap
+    background-color: #fff
+    padding: 30px
+    display: flex
+    border: 1px solid #E0E3EE
+    border-top: none
+    border-radius: 0 0 5px 5px
+    transition: 0.2s
+
+    +mw(600)
+      flex-direction: column
+      align-items: center
+      padding-top: 20px
+      padding-left: 15px
+      padding-right: 15px
+      padding-bottom: 20px
+
+  &__brand
+    width: 98px
+    height: 80px
+    border: 1px solid #E0E3EE
+    border-radius: 5px
+    margin-right: 30px
+    background-position: center center
+    background-repeat: no-repeat
+    flex-shrink: 0
+
+    +mw(600)
+      margin-bottom: 20px
+
+  &__box
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+  &__title
+    font-weight: 600
+    color: $text
+    text-align: center
+    margin-bottom: 20px
+
+  &__service
+    display: flex
+    align-items: center
+
+  &__value
+    background: #F3F4FB
+    border-radius: 5px
+    padding: 6px 10px
+    margin-right: 10px
+    font-weight: 500
+    font-size: 0.875rem
+    color: #ACAFC2
+
+  &__date
+    font-size: 0.875rem
+    color: #000000
+
+.albums
+
+  +mw(768)
+    margin-bottom: 30px
+
+  &__inner
+    background: #F7F7FA
+    border: 1px solid #E0E3EE
+    border-radius: 10px
+
+  &__title
+    font-weight: 600
+    font-size: 1rem
+    color: $text
+    text-transform: capitalize
+
+    +mw(768)
+      display: none
+
+    &--top
+      border-bottom: 1px solid #E6E6EA
+      font-size: 1.125rem
+      padding: 30px
+
+      +mw(768)
+        display: block
+
+  &__list
+    +mw(768)
+      display: flex
+      flex-wrap: wrap
+
+  &__item
+    +mw(768)
+      width: calc(100% / 8)
+
+    +mw(600)
+      width: calc( 100% / 4 )
+
+    & + .albums__item
+      border-top: 1px solid #E6E6EA
+
+  &__link
+    display: flex
+    align-items: center
+    padding-left: 20px
+    transition: 0.2s
+    padding-top: 19px
+    padding-bottom: 20px
+
+    +mw(768)
+      padding: 0
+
+    &:hover
+      background-color: #fff
+
+  &__img-wrap
+    width: 75px
+    height: 40px
+    background-repeat: no-repeat
+    background-position: center center
+    margin-right: 25px
+
+    +mw(768)
+      // width: 100%
+      height: 50px
+      margin-right: 0
+      flex-grow: 1
+
+.image-main
+  background-image: url(/img/svg/a1.svg)
+  background-size: 36px 30px

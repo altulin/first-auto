@@ -1,0 +1,63 @@
+extends ../templates/_main.pug
+include ../helpers/mixins.pug
+
+
+
+block link-active
+  //- -const active = 1;
+  -const active = `about`;
+  -active_header = `library`
+
+block page-main
+
+
+block content
+
+  include ../modules/_breadcrumbs
+
+  section.book-page.mb120
+    .book-page__inner.container
+      .book-page__col-wrap.column-wrap
+        .book-page__col.book-page__col--left.column-left--half
+          figure.book-page__img-wrap  
+            +img-retina(`book-big`, `jpg`, `Книга`, `book-page__img`, `287`, `444`)
+        .book-page__col.column-right--half
+          .book-page__head
+            p.book-page__section Научно-популярная литература
+            h2.book-page__title.title.size-4 Sapiens. Краткая история человечества 
+            p.book-page__autor Автор: Харари Юваль Ной
+          .book-page__cont 
+            p.book-page__service Описание:
+            p.book-page__text Сто тысяч лет назад Homo sapiens был одним из как минимум шести видов человека, живших на этой планете, - ничем не примечательным животным, которое играло в экосистеме роль не большую, чем гориллы, светлячки или медузы. Но около семидесяти тысяч лет назад загадочное изменение когнитивных способностей Homo sapiens превратило его в хозяина планеты и кошмар экосистемы. Как человек разумный сумел покорить мир? Что стало с другими видами человека? Когда и почему появились деньги, государства и религия? Как возникали и рушились империи? Почему почти все общества ставили женщин ниже мужчин? Как наука и капитализм стали господствующими вероучениями современной эры? Становились ли люди с течением времени счастливее? Какое будущее нас ожидает?
+            p.book-page__text Юваль Харари показывает, как ход истории формировал человеческое общество и действительность вокруг него. Его книга прослеживает связь между событиями прошлого и проблемами современности и заставляет читателя пересмотреть все устоявшиеся представления об окружающем мире.
+  
+  section.book-other.mb120
+    .book-other__inner.container
+      h2.book-other__title.title.size-4 Другие книги в библиотеке
+      ul.book-other__list 
+        -n = 0
+        while n<3
+          -n++
+          li.book-other__item 
+            a.library__book.book(href="/book.html")
+                .book__inner
+                  figure.book__img-wrap
+                    +img(`book`, `png`, `Наш именинник`, `book__img`, `130`, `200`)
+                
+                .book__cont
+
+                  p.book__section Научно-популярная литература
+                  h4.book__title.size-1 Sapiens. Краткая история человечества
+                  p.book__autor Харари Юваль Ной
+
+
+
+      
+
+              
+
+      
+        
+
+
+  //- include ../modules/_anonymous.pug

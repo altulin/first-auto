@@ -1,0 +1,73 @@
+extends ../templates/_main.pug
+include ../helpers/mixins.pug
+
+
+
+  block link-active
+    //- -const active = 1;
+    -const active = `about`;
+
+
+block content
+
+  include ../modules/_breadcrumbs
+
+  section.personal.mb120
+    .personal__inner.container
+      h1.personal__title.title.size-4 Mazda. Отдел маркетинга
+      .personal__col-wrap.column-wrap
+        .personal__col.column-left
+          section.best
+            .best__inner
+              h2.best__title Mazda. Отдел маркетинга
+              .best__human.human 
+                .human__head 
+                  figure.human__img-wrap 
+                    +img(`man2`, `png`, `Лучший сотрудник`, `human__img`, `132`, `132`)
+                  .human__head-box
+                    h3.human__title.size-4 Иванов Иван Иванович
+                    ul.human__list.human__list--head   
+                      li.human__item.human__item--head  
+                        p.human__term.size-1.human__term--head Организация:
+                        p.human__value.size-1 Mazda
+                      li.human__item.human__item--head
+                        p.human__term.size-1.human__term--head Должность:
+                        p.human__value.size-1 Руководитель отдела продаж
+                ul.human__list.human__list--cont   
+                  li.human__item.human__item--cont  
+                    p.human__term.size-1.human__term--cont Моб. телефон:
+                    p.human__value.size-1 8 (914) 912-62-15
+                  li.human__item.human__item--cont  
+                    p.human__term.size-1.human__term--cont E-mail:
+                    p.human__value.size-1 Ivanov@mail.ru
+                  li.human__item.human__item--cont  
+                    p.human__term.size-1.human__term--cont Родной город:
+                    p.human__value.size-1 Иркутск
+                  li.human__item.human__item--cont  
+                    p.human__term.size-1.human__term--cont Учебное заведение:
+                    p.human__value.size-1 МГИМО
+                  li.human__item.human__item--cont  
+                    p.human__term.size-1.human__term--cont Хобби/увлечения:
+                    p.human__value.size-1 Автомобили, Баскетбол
+
+        .personal__col.column-right
+          .personal__section.best-section
+            .best-section__head
+              figure.best-section__img-wrap.image-mazda
+              h3.best-section__title Отдел продаж
+
+            .best-section__coworker.coworker
+              -let n = 0
+              while n < 4
+                - n++
+                a.coworker__item.coworker__item--best-section(href="/personal.html")
+                  figure.coworker__img-wrap
+                    +img(`girl`, `png`, `Наш именинник`, `coworker__img`, `48`, `48`)
+
+                  .coworker__content
+                    h4.coworker__name.size-1 Солнечная Александра Александровна
+                    p.coworker__proff Менеджер по продажам Mercedes Benz
+              - n = 0;
+
+
+  include ../modules/_anonymous.pug

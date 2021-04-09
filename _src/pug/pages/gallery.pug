@@ -1,0 +1,123 @@
+extends ../templates/_main.pug
+include ../helpers/mixins.pug
+
+
+
+  block link-active
+    //- -const active = 1;
+    -const active = `about`;
+    -active_header = `gallery`
+
+
+block content
+
+  include ../modules/_breadcrumbs
+
+  section.gallery.mb120
+    .gallery__inner.container
+      h1.gallery__title.title Галерея
+      .gallery__col-wrap.column-wrap.column-wrap--reverse
+  
+        .gallery__col.column-left
+          a.gallery__link.post.post-block(href="#modal-gallery" rel="modal:open")
+            figure.post__img-wrap   
+              //- +img-retina(`new-year`, `jpg`, `галлерея`, `post__img`, `680`, `260`)
+              picture
+                  source(media="(max-width: 600px)" srcset="/img/novelty.jpg 1x, /img/novelty@2x.jpg 2x")
+                  img.post__img(src="/img/new-year.jpg" srcset="/img/new-year.jpg 1x, /img/new-year@2x.jpg 2x" loading="lazy" alt="праздник" width="680" height="260")
+            .post-block__wrap  
+              figure.post-block__brand.image-jaguar
+              .post-block__box 
+                h3.post-block__title.size-3 Фотографии с новогоднего корпоратива  
+                .post-block__service 
+                  p.post-block__value 250 фотографий
+                  p.post-block__date 10 января 2022 г.
+
+          a.gallery__link.post.post-block(href="#modal-gallery" rel="modal:open")
+            figure.post__img-wrap   
+              //- +img-retina(`new-year`, `jpg`, `галлерея`, `post__img`, `680`, `260`)
+
+              picture
+                  source(media="(max-width: 600px)" srcset="/img/novelty.jpg 1x, /img/novelty@2x.jpg 2x")
+                  img.post__img(src="/img/new-year.jpg" srcset="/img/new-year.jpg 1x, /img/new-year@2x.jpg 2x" loading="lazy" alt="праздник" width="680" height="260")
+            .post-block__wrap  
+              figure.post-block__brand.image-ford
+              .post-block__box 
+                h3.post-block__title.size-3 Фотографии с новогоднего корпоратива  
+                .post-block__service 
+                  p.post-block__value 250 фотографий
+                  p.post-block__date 10 января 2022 г.
+
+          a.gallery__link.post.post-block(href="#modal-gallery" rel="modal:open")
+            figure.post__img-wrap   
+              //- +img-retina(`new-year`, `jpg`, `галлерея`, `post__img`, `680`, `260`)
+              picture
+                  source(media="(max-width: 600px)" srcset="/img/novelty.jpg 1x, /img/novelty@2x.jpg 2x")
+                  img.post__img(src="/img/new-year.jpg" srcset="/img/new-year.jpg 1x, /img/new-year@2x.jpg 2x" loading="lazy" alt="праздник" width="680" height="260")
+            .post-block__wrap  
+              figure.post-block__brand.image-mazda
+              .post-block__box 
+                h3.post-block__title.size-3 Фотографии с новогоднего корпоратива  
+                .post-block__service 
+                  p.post-block__value 250 фотографий
+                  p.post-block__date 10 января 2022 г.
+          
+        
+        .gallery__col.column-right.albums
+          .albums__inner  
+            h2.albums__title.albums__title--top.size-2 Альбомы
+            ul.albums__list 
+              li.albums__item 
+                a.albums__link(href="gallery-main.html")
+                  figure.albums__img-wrap.image-main
+                  span.albums__title Первая автоколонна
+
+              each item in main_tabs
+                li.albums__item 
+                  a.albums__link(href=`gallery-${item}.html`)
+                    figure.albums__img-wrap(class=(`image-${item}`))
+                    span.albums__title= item
+
+            
+
+         
+
+
+
+  include ../modules/_anonymous.pug
+
+  section.modal-gallery.modal#modal-gallery
+    .modal-gallery__inner
+      .modal-gallery__header.gallery-header
+        figure.gallery-header__brand.image-jaguar
+        .gallery-header__box 
+          h3.gallery-header__title.size-3 Фотографии с новогоднего корпоратива  
+          .gallery-header__service 
+            p.gallery-header__value 250 фотографий
+            p.gallery-header__date 10 января 2022 г.
+
+      .modal-gallery__slider
+        -n=0
+        while n<10
+          -n++
+          .modal-gallery__box
+            figure.modal-gallery__img-wrap
+              +img-retina(`slide-big`, `jpg`,``, `modal-gallery__img`, `680`, `425`)
+
+      .modal-gallery__thumbs.thumbs
+          -n=0
+          while n<10
+            -n++
+            .thumbs__slide
+              figure.thumbs__img-wrap
+                +img(`slide-min`, `jpg`,``, `thumbs__img`, `120`, `75`)
+
+
+    
+
+
+
+  
+            
+
+        

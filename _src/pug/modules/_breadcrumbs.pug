@@ -1,6 +1,6 @@
 - const array = breadcrumbsArr.get(active)
 section.breadcrumbs
-  .breadcrumbs__inner.container
+  .breadcrumbs__inner.container(class=(page_main ? `container--${page_main}` : ``))
     ul.breadcrumbs__list
       each val, i in array
         li.breadcrumbs__item

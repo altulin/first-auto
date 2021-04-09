@@ -1,11 +1,24 @@
-//- include ../helpers/arrays
-
+- const taile_Arr = asideArr.get(`about`)
 header.page-header
   .page-header__box= link
     a.page-header__logo(href="/index.html")
       +img-svg(`logo`, `page-header__logo-img`, `Логотип компании`, `165`, `30`)
+    <a class="page-header__link page-header__link--open" href="#my-menu">
+      span Open the menu
+    </a>
+    <a class="page-header__link page-header__link--close hidden" href="#my-menu">
+      span Close the menu
+    </a>
     nav.page-header__nav.header-nav#my-menu
       ul.header-nav__list
         each val, i in header_nav
           li.header-nav__item
-            a.header-nav__link.size-0.hover-opacity(href=`/${links.get(val)}.html` class=(active===links.get(val) ? `header-nav__link--active` : ``))= val
+            a.header-nav__link.size-0.hover-opacity(href=`/${links.get(val)}.html` class=(active_header===links.get(val) ? `header-nav__link--active` : ``))= val
+
+            if val=== `О компании`
+              ul.tiles__list.tiles__list--header
+                each val in taile_Arr
+                  li.tiles__item
+                    a.tiles__link(href=`/${links.get(val)}.html` class=(iconsArr.get(val) === `` ? `tiles__link--main` : `tiles__link--${iconsArr.get(val)}`) class=(val ===activeTile ? `tiles__link--active` : ``))
+                      span= val
+              

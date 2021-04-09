@@ -1,0 +1,37 @@
+extends ../templates/_main.pug
+include ../helpers/mixins.pug
+
+
+
+block link-active
+  //- -const active = 1;
+  -const active = `about`;
+  -active_header = `news`
+
+
+block content
+  include ../modules/_breadcrumbs
+  section.news-page.mb120
+    .news-page__inner.container
+      h1.news-page__title.title.size-4 Новости группы компаний
+      
+      ul.news-page__list 
+        -n = 0
+        while n<9
+          -n++
+          li.news-page__item
+            a.news-page__link.card.card--third(href="/news-one.html")
+              figure.card__img-wrap.card__img-wrap--third
+
+                picture
+                  source(srcset="/img/webp/football.webp" type="image/webp")
+                  img.card__img(src="/img/football.jpg" srcset="/img/football.jpg 1x, /img/football@2x.jpg 2x" loading="lazy" alt="праздник" width="330" height="260")
+
+              .card__content
+                h3.card__title.size-3 Наши футбольные команды заняли призовые места на короративном турнире
+                .card__info
+                  p.card__category Спорт
+                  p.card__date 10 июля 2021 г. 
+       
+
+  include ../modules/_anonymous.pug

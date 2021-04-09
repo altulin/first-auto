@@ -1,12 +1,8 @@
 .promo
 
-  &__inner
-
   &__title
     width: 100%
     text-align: left
-
-  &__col
 
   &__list
     display: flex
@@ -14,14 +10,12 @@
     justify-content: space-between
     margin-bottom: 10px
 
-  &__item
-
   &__link-news
     height: 60px
     display: flex
     align-items: center
     justify-content: center
-    font-size: 16px
+    font-size: 1rem
     font-weight: 500
     color: #B0B3C6
     border: 1px solid #E3E5EF
@@ -40,17 +34,16 @@
       fill: transparent
       transform: translateY(2px)
 
-  &__slider
-
-  &__birtday
-
-  &__library
-
-.container
-
 .column-wrap
   display: flex
   justify-content: space-between
+
+  +mw(768)
+    flex-direction: column
+
+  &--reverse
+    +mw(768)
+      flex-direction: column-reverse
 
 .title
   margin-bottom: 30px
@@ -62,6 +55,10 @@
   flex-grow: 1
   max-width: 680px
   min-width: 0
+
+  +mw(768)
+    max-width: none
+    margin-bottom: 30px
 
 .card
   background: #FFFFFF
@@ -78,8 +75,14 @@
     &--wide
       padding-top: 38%
 
+      +mw(600)
+        padding-top: 60%
+
     &--half
       padding-top: 60%
+
+      +mw(600)
+        // padding-top: 38%
 
   &__img
     position: absolute
@@ -91,6 +94,10 @@
   &__content
     padding: 20px 30px
 
+    +mw(600)
+      padding-left: 15px
+      padding-right: 15px
+
   &__title
     font-weight: 600
     color: $text
@@ -101,17 +108,20 @@
     align-items: center
 
   &__category
-    ont-weight: 500
-    font-size: 14px
+    font-weight: 500
+    font-size: 0.875rem
     color: #ACAFC2
     padding: 6px 10px
     background: #F3F4FB
     border-radius: 5px
     margin-right: 20px
 
+    +mw(600)
+      font-size: 1rem
+
   &__date
     ont-weight: 300
-    font-size: 14px
+    font-size: 0.875rem
     color: $black
 
   &--wide
@@ -120,15 +130,12 @@
   &--half
     width: calc(50% - 10px)
 
+    +mw(600)
+      width: 100%
+
   &:hover
     background: #F7F7FA
     transition: 0.2s
-
-.size-3
-
-.arr-link
-
-.icon
 
 .promo-slider
   background: #FCFCFF
@@ -139,6 +146,10 @@
   padding-bottom: 33px
   width: 100%
 
+  +mw(600)
+    padding-left: 15px
+    padding-right: 15px
+
   &__title
     margin-bottom: 25px
     font-weight: 600
@@ -146,7 +157,10 @@
   &__wrap
     width: 100%
 
-  &__item
+  & .slick-arrow
+
+    +mw(600)
+      display: none !important
 
 .private-card
   background: #FFFFFF
@@ -166,29 +180,38 @@
   &__img-wrap
     margin-bottom: 10px
 
-  &__img
-
   &__title
     font-weight: 600
     color: $text
     margin-bottom: 10px
 
+    +mw(600)
+      text-align: center
+
   &__proff
-    font-size: 14px
+    font-size: 0.875rem
     color: #B0B3C6
     font-weight: 500
+
+    +mw(600)
+      text-align: center
 
 .private-card--slide
   border-radius: 5px
   width: 228px
   margin-left: 20px
 
-.size-1
-
 .column-right
   width: 340px
   flex-shrink: 0
   margin-left: 20px
+
+  +mw(1200)
+    width: 280px
+
+  +mw(768)
+    margin-left: 0
+    width: auto
 
 .promo-birtday
   background: #FFFFFF
@@ -196,27 +219,30 @@
   border-radius: 5px
   margin-bottom: 34px
 
-  &__head-wrap
-
   &__head
     padding-top: 30px
     padding-left: 30px
+    // padding-right: 30px
     padding-bottom: 17px
     display: flex
     align-items: center
 
+    +mw(600)
+      padding-left: 15px
+      padding-right: 15px
+
   &__date
-    font-size: 14px
+    font-size: 0.875rem
     font-weight: 600
     color: $white
     padding: 12px 9px
     background: #222124
     border-radius: 5px
-    margin-right: 16px
+    margin-right: 1rem
 
   &__title
     font-weight: 600
-    font-size: 16px
+    font-size: 1rem
 
   &__img-wrap
     position: relative
@@ -229,20 +255,22 @@
     left: 0
     top: 0
 
-  &__festive
-
-  &__item
-
 .coworker
 
   &__item
     display: flex
-    padding-top: 15px
-    padding-bottom: 15px
+    padding-top: 10px
+    padding-bottom: 10px
     padding-left: 30px
     padding-right: 30px
     transition: 0.2s
     border-top: 1px solid #E0E3EE
+
+    +mw(768)
+      padding-top: 15px
+      padding-bottom: 15px
+      padding-left: 15px
+      padding-right: 15px
 
     &:hover
       background: #F7F7FA
@@ -253,23 +281,25 @@
     width: 48px
     height: 48px
     margin-right: 20px
-
-  &__img
-
-  &__content
+    flex-shrink: 0
 
   &__name
     font-weight: 600
-    font-size: 14px
-    line-height: 17px
+    font-size: 0.875rem
     margin-bottom: 5px
     color: $text
 
+    +mw(600)
+      // font-size: 18px
+      margin-bottom: 10px
+
   &__proff
     font-weight: 500
-    font-size: 12px
-    line-height: 14px
+    font-size: 0.75rem
     color: #B0B3C6
+
+    +mw(600)
+      // font-size: 1rem
 
 .promo-library
   background: #FCFCFF
@@ -278,28 +308,21 @@
   border-radius: 5px
   padding: 30px 30px 30px 30px
 
+  +mw(600)
+    padding-left: 15px
+    padding-right: 15px
+
   &__title
     font-weight: 600
     margin-bottom: 30px
 
   &__book
-    display: flex
-    flex-direction: column
-    background: #FFFFFF
-    border: 1px solid #E0E3EE
-    box-shadow: 0px 5px 20px #EFEFFC
-    border-radius: 5px
-    padding: 30px
-    transition: 0.2s
-    margin-bottom: 38px
 
-    &:hover
-      box-shadow: none
+    margin-bottom: 38px
 
   &__link
     font-weight: 500
-    font-size: 16px
-    line-height: 19px
+    font-size: 1rem
     color: #B0B3C6
     transition: 0.2s
 
@@ -315,33 +338,63 @@
       fill: transparent
 
 .book
+  display: flex
+  flex-direction: column
+  background: #FFFFFF
+  border: 1px solid #E0E3EE
+  box-shadow: 0px 5px 20px #EFEFFC
+  border-radius: 5px
+  transition: 0.2s
+
+  &:hover
+    box-shadow: none
+
+  &__inner
+    display: flex
+    justify-content: center
+    padding-top: 30px
+    padding-bottom: 30px
+    border-bottom: 1px solid #F6F6F9
+
+  &__cont
+    padding-left: 30px
+    padding-right: 30px
+    padding-bottom: 30px
+    padding-top: 13px
+
+    +mw(768)
+      padding-left: 15px
+      padding-right: 15px
+      display: flex
+      flex-direction: column
+      align-items: center
+      text-align: center
 
   &__img-wrap
-    margin-bottom: 43px
     align-self: center
-
-  &__img
 
   &__section
     font-weight: 500
-    font-size: 12px
+    font-size: 0.75rem
     color: #ACAFC2
     background: #F3F4FB
     border-radius: 2px
-    padding: 5px 3px
+    padding: 5px 8px
     margin-bottom: 13px
+    display: inline-block
+
+    +mw(600)
+      font-size: 1rem
 
   &__title
     margin-bottom: 5px
     font-weight: 600
-    font-size: 16px
-    line-height: 19px
+    font-size: 1rem
     color: #000000
 
   &__autor
     font-weight: 500
-    font-size: 12px
-    line-height: 14px
+    font-size: 0.75rem
     color: #90969E
 
 .slick-initialized .slick-slide
