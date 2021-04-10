@@ -21,15 +21,18 @@ block content
             .best__inner
               h2.best__title Документы  нашей компании
               .best__main-tabs.main-tabs
-                
-                ul.main-tabs__list
+
+                figure.best__img-wrap.brand-tab
+                  +img-svg(`logo-black`, `brand-tab__img`, `Логотип компании`, `165`, `30`)
+
+                ul.main-tabs__list.brand-block
                   each val in main_tabs
                     li.main-tabs__item
                       a.main-tabs__link(href=`#main-tab__${val}` class=(`image-${val}`))
 
                 each val in main_tabs
                   section.main-tabs__content.sub-tabs.best-tabs(id=(`main-tab__${val}`) class=(`main-tabs__cont--${val}`) data-accordion-group)
-                    h3.best-tabs__title.size-3 Лучшие сотрудники месяца 
+                    h3.best-tabs__title.size-3 Лучшие сотрудники месяца&ensp;
                       span.best-tabs__brand= `${val}`
 
                     .sub-tabs__content(data-content)

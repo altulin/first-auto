@@ -21,9 +21,13 @@ block content
             .company__inner
               h2.company__title Структура компании первая автоколонна
               .company__main-tabs.main-tabs
-                figure.company__img-wrap
-                  +img-svg(`logo-black`, `company__img`, `Логотип компании`, `165`, `30`)
-                ul.main-tabs__list
+                figure.company__img-wrap.brand-tab
+                  +img-svg(`logo-black`, `brand-tab__img`, `Логотип компании`, `165`, `30`)
+
+
+
+
+                ul.main-tabs__list.brand-block
                   each val in main_tabs
                     li.main-tabs__item
                       a.main-tabs__link(href=`#main-tab__${val}` class=(`image-${val}`))
@@ -32,7 +36,6 @@ block content
                   section.main-tabs__content.sub-tabs(id=(`main-tab__${val}`) class=(`main-tabs__cont--${val}`) data-accordion-group)
 
                     each item in sub_tabs
-                      //- .sub-tabs__accordion(data-accordion class=(`${item[1]}`=== `sales` ? `open` : ``))
                       .sub-tabs__accordion(data-accordion)
                         .sub-tabs__head(data-control)
                           h3.sub-tabs__title.size-2= item[0]

@@ -1,19 +1,17 @@
 section.modal-anonymous.modal#modal-anonymous
-  .modal-anonymous__inner 
+  .modal-anonymous__inner
 
     h2.modal-anonymous__title Форма анонимной связи
     //- .modal-anonymous__img-box
-    figure.modal-anonymous__img-wrap 
+    //- figure.modal-anonymous__img-wrap
       //- +img-retina(`hat-anonim`, `png`, `Напишите нам ананимно`, `modal-anonymous__img`, `694`, `508`)
 
     form.modal-anonymous__form.form-anonym#form-anonym(method="post" action="#" name="form-anonym")
-      fieldset.form-anonym__field 
+      fieldset.form-anonym__field
         legend.form-anonym__legend.size-3 Есть предложения по улучшению качества работы или Вы просто чем-то недовольны
         p.form-anonym__text.size-1 Напишите нам об этом - это ананимно
 
         label.form-anonym__label(for="form-anonym__area") Введите ананимное сообщение
         textarea.form-anonym__area.valid#form-anonym__area(placeholder="Введите ананимное сообщение" autofocus="true" name="form-anonym__area")
-      
-      button.form-anonym__btn.size-1(type="submit") Отправить
-    
 
+      button.form-anonym__btn.size-1(type="submit") Отправить

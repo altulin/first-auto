@@ -141,7 +141,7 @@ $(function () {
   };
 
 
-  // после отправки открываем страницу 
+  // после отправки открываем страницу
   const successHandler = (e) => {
     e.target.reset();
     window.open("/thanks.html");
@@ -154,4 +154,10 @@ $(function () {
       $(item).removeClass(`not-valid`);
     })
   };
+
+  // brand-tab
+  $(`.brand-tab`).on(`click`, () => {
+    $(`.brand-block`).toggleClass(`brand-block--active`);
+    $(`.brand-tab`).toggleClass(`brand-tab--active`);
+  });
 });

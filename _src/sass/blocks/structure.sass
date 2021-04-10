@@ -4,7 +4,7 @@
   & .main-tabs__link
 
     +mw(600)
-      background-size: contain
+      // background-size: contain
 
   &__inner
 
@@ -14,17 +14,18 @@
   &__main-tabs
 
   &__img-wrap
-    width: 100%
-    height: 80px
-    display: flex
-    justify-content: center
-    align-items: center
-    border: 1px solid #E0E3EE
-    border-radius: 5px 5px 0 0
+    // width: 100%
+    // height: 80px
+    // display: flex
+    // justify-content: center
+    // align-items: center
+    // border: 1px solid #E0E3EE
+    // border-radius: 5px 5px 0 0
+    // border-bottom: none
 
   &__img
-    width: 165px
-    height: 30px
+    // width: 165px
+    // height: 30px
 
 .main-tabs
 
@@ -34,17 +35,33 @@
     justify-content: space-between
     border: 1px solid #E0E3EE
     border-radius: 0 0 5px 5px
-    border-top: none
+
+    +mw(600)
+      // flex-wrap: wrap
+      // max-height: 0
+      // overflow: hidden
 
     & .main-tabs__link
-      +mw(600)
-        // background-size: contain
 
   &__item
-    width: calc(100% / 5)
+    width: calc(100% / 7)
+
+    +mw(600)
+      width: calc( 100% / 3 )
+      border: 1px solid #E0E3EE
+      border-left: none
+
+      &:nth-child(3n+3)
+        border-right: none
+
+      &:nth-child(n+4)
+        border-top: none
 
     & + li
       border-left: 1px solid #E0E3EE
+
+      +mw(600)
+        border-left: none
 
   &__link
     background-repeat: no-repeat
@@ -53,6 +70,10 @@
     width: 100%
     background-position: center center
     transition: 0.2s
+
+    +mw(600)
+      min-height: 78px
+      height: 100%
 
     &:hover
       background-color: #fff
@@ -68,8 +89,8 @@
 
       +mw(600)
         background-size: contain
-        max-width: 45px
-        margin-right: 10px
+        // max-width: 45px
+        margin-right: 15px
 
     & +div
       margin-top: 20px
@@ -80,7 +101,7 @@
     max-width: 180px
 
     +mw(600)
-      max-width: 210px
+      max-width: 180px
 
   &__head
     display: flex
@@ -112,6 +133,9 @@
     width: 80px
     height: 40px
 
+    +mw(1250)
+      margin-right: 20px
+
     +mw(768)
       display: none
 
@@ -127,7 +151,7 @@
     font-size: 0.875rem
     color: #B0B3C6
 
-    +mw(600)
+    +mw(1250)
       display: none
 
 .open
@@ -183,7 +207,7 @@
 
     +mw(768)
       display: flex
-      height: 50px
+      // height: 50px
       // flex-wrap: wrap
 
   & .main-tabs__content
@@ -207,3 +231,54 @@
   +mw(600)
     padding-left: 15px
     padding-right: 15px
+
+.brand-tab
+  width: 100%
+  height: 80px
+  display: flex
+  justify-content: center
+  align-items: center
+  border: 1px solid #E0E3EE
+  border-radius: 5px 5px 0 0
+  border-bottom: none
+
+  &__img
+    width: 165px
+    height: 30px
+
+  +mw(600)
+    position: relative
+    border-radius: 5px
+    border-bottom: 1px solid #e0e3ee
+
+    &::before
+      content: ""
+      position: absolute
+      width: 20px
+      height: 20px
+      background-image: url(/img/svg/arr.svg)
+      top: 50%
+      transform: translateY(-50%)
+      right: 15px
+
+    &--active
+      border-radius: 5px 5px 0 0
+      border-bottom: none
+
+      &::before
+        transform: translateY(-50%) rotate(90deg)
+
+.brand-block
+
+  +mw(600)
+    border: none
+
+    flex-wrap: wrap
+    max-height: 0
+    overflow: hidden
+
+    &--active
+      height: auto
+      max-height: 240px
+      border: 1px solid #e0e3ee
+      border-top: none
