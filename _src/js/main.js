@@ -144,7 +144,7 @@ $(function () {
   // после отправки открываем страницу
   const successHandler = (e) => {
     e.target.reset();
-    window.open("/thanks.html");
+    $('#modal-thanks').modal();
   }
 
 
