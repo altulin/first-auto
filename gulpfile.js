@@ -1,4 +1,4 @@
-const projectFolder = `dist`; //Папка продакшн
+const projectFolder = `first-auto`; //Папка продакшн
 const sourceFolder = `_src`;  // Папка разработки
 
 // js
@@ -230,6 +230,10 @@ function buildcopy() {
     path.src.img,
     path.src.html,
     path.src.ico,
+    `${sourceFolder}/*.png`,
+    `${sourceFolder}/*.xml`,
+    `${sourceFolder}/*.svg`,
+    `${sourceFolder}/site.webmanifest`,
     path.src.files
   ], { base: `${sourceFolder}` }) // Параметр "base" сохраняет структуру проекта при копировании
     .pipe(dest(`${projectFolder}/`)) // Выгружаем в папку с финальной сборкой
