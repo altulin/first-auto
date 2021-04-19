@@ -1,4 +1,5 @@
-const projectFolder = `first-auto`; //Папка продакшн
+const projectName = `first_auto` // название проекта
+const projectFolder = `${projectName}_dist`; //Папка продакшн
 const sourceFolder = `_src`;  // Папка разработки
 
 // js
@@ -19,7 +20,7 @@ const slick_js = `node_modules/slick-carousel/slick/slick.min.js`;
 const sourceCss = `${sourceFolder}/sass/style.sass` // файл для разработки Пользовательские стили
 // const projectCss = `style.css`; // файл в продакшн
 const projectCssMin = `style.min.css`; // файл в продакшн минифицированный
-// const projectCss = `style.css`; // файл в продакшн минифицированный
+const projectCss = `style.css`; // файл в продакшн минифицированный
 
 // установленные библиотеки css
 const normalize_css = `node_modules/normalize.css/normalize.css`;
@@ -47,7 +48,7 @@ const path = {
   },
   src: {
     html: `${sourceFolder}/*.html`, //
-    css: `${sourceFolder}/css/style.min.css`, //
+    css: `${sourceFolder}/css/style.css`, //
     min_js: `${sourceFolder}/js/script.min.js`, //
     js: `${sourceFolder}/js/script.js`, //
     img: `${sourceFolder}/img/**/*`, //
@@ -56,6 +57,7 @@ const path = {
     libs_js: `${sourceFolder}/js/libs/**/*.js`,//
     libs_css: `${sourceFolder}/css/libs/**/*`,//
     ico: `${sourceFolder}/*.ico`,
+    fav: `${sourceFolder}/fav/**/*`,
     files: `${sourceFolder}/files/**/*`
   },
   watch: {
@@ -86,7 +88,8 @@ const { src, dest, parallel, watch, series } = require('gulp'),
   replace = require('gulp-replace'),
   svgstore = require('gulp-svgstore'),
   rename = require("gulp-rename"),
-  webp = require('gulp-webp')
+  webp = require('gulp-webp'),
+  prettify = require('gulp-html-prettify')
 
 
 
@@ -139,9 +142,9 @@ function styles() {
   ])
     .pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(concat(projectCssMin)) // Конкатенируем в файл
+    .pipe(concat(projectCss)) // Конкатенируем в файл
     .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true })) // Создадим префиксы с помощью Autoprefixer
-    .pipe(cleancss({ level: { 1: { specialComments: 0 } }/* , format: 'beautify' */ })) // Минифицируем стили
+    // .pipe(cleancss({ level: { 1: { specialComments: 0 } }/* , format: 'beautify' */ })) // Минифицируем стили
     .pipe(sourcemaps.write(".")) //добавляем карту
     .pipe(dest(`${sourceFolder}/css/`)) // Выгрузим результат в папку
     .pipe(browserSync.stream()) // Сделаем инъекцию в браузер
@@ -230,10 +233,7 @@ function buildcopy() {
     path.src.img,
     path.src.html,
     path.src.ico,
-    `${sourceFolder}/*.png`,
-    `${sourceFolder}/*.xml`,
-    `${sourceFolder}/*.svg`,
-    `${sourceFolder}/site.webmanifest`,
+    path.src.fav,
     path.src.files
   ], { base: `${sourceFolder}` }) // Параметр "base" сохраняет структуру проекта при копировании
     .pipe(dest(`${projectFolder}/`)) // Выгружаем в папку с финальной сборкой
@@ -269,6 +269,14 @@ function transformPug() {
     .pipe(browserSync.stream()) // Сделаем инъекцию в браузер
 }
 
+function htmlbeautify() {
+
+
+  return src(path.src.html)
+    .pipe(prettify({ indent_char: ' ', indent_size: 2 }))
+    .pipe(dest(`${sourceFolder}`))
+}
+
 
 
 exports.browsersync = browsersync;
@@ -286,8 +294,9 @@ exports.replace = replace;
 // exports.svgstore = svgstore;
 exports.rename = rename;
 exports.createWebp = createWebp;
+exports.htmlbeautify = htmlbeautify;
 
 
-exports.default = parallel(cleanImg, styles, scripts, images, imagesSvg, createSprite, createWebp, transformPug, browsersync, startwatch);
+exports.default = parallel(cleanImg, styles, scripts, images, imagesSvg, createSprite, createWebp, transformPug, browsersync, htmlbeautify, startwatch);
 // exports.build = series(clean, styles, scripts, images, buildcopy);
-exports.build = series(cleanImg, styles, scripts, images, imagesSvg, createSprite, createWebp, transformPug, buildcopy);
+exports.build = series(cleanImg, styles, scripts, images, imagesSvg, createSprite, createWebp, transformPug, htmlbeautify, buildcopy);

@@ -1,24 +1,26 @@
-include ../modules/_head.pug
+doctype html
+html(lang="ru")
+  include ../modules/_head.pug
 
-body.page-body
-  include ../helpers/arrays
+  body.page-body
+    include ../helpers/arrays
 
-  block link-active
-  include ../modules/_header
+    block link-active
+    include ../modules/_header
 
-  .page-body__inner
+    .page-body__inner
 
-    block page-main
-    main.page-main.pt80(class=(page_main ? `page-main--${page_main}` : ``))
-      block content
+      block page-main
+      main.page-main.pt80(class=(page_main ? `page-main--${page_main}` : ``))
+        block content
 
-    include ../modules/_footer.pug
+      include ../modules/_footer.pug
 
-  if anonymous
-    include ../modules/_modal-anonymous.pug
-  
-  if thanks
-    include ../modules/_modal-thanks.pug
+    if anonymous
+      include ../modules/_modal-anonymous.pug
+    
+    if thanks
+      include ../modules/_modal-thanks.pug
 
 
-  include ../modules/_scripts.pug
+    include ../modules/_scripts.pug
