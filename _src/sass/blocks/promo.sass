@@ -196,6 +196,24 @@
     +mw(600)
       text-align: center
 
+.best-staff
+  position: relative
+
+  &::after
+    content: ""
+    position: absolute
+    width: 25px
+    height: 25px
+    background-color: #FFF1C1
+    border: 1px solid #F6F6FA
+    background-image: url(/img/star.png)
+    background-size: 15px 15px
+    background-position: center center
+    background-repeat: no-repeat
+    border-radius: 50%
+    top: 0
+    right: -8px
+
 .private-card--slide
   border-radius: 5px
   width: 228px
@@ -222,7 +240,6 @@
   &__head
     padding-top: 30px
     padding-left: 30px
-    // padding-right: 30px
     padding-bottom: 17px
     display: flex
     align-items: center

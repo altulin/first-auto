@@ -1468,6 +1468,23 @@ ul.tiles__list.tiles__list--header.mm-spn--open {
       .private-card__proff {
         text-align: center; } }
 
+.best-staff {
+  position: relative; }
+  .best-staff::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #FFF1C1;
+    border: 1px solid #F6F6FA;
+    background-image: url(/img/star.png);
+    background-size: 15px 15px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    top: 0;
+    right: -8px; }
+
 .private-card--slide {
   border-radius: 5px;
   width: 228px;
@@ -2201,7 +2218,9 @@ ul.tiles__list.tiles__list--header.mm-spn--open {
       .main-tabs__item:nth-child(3n+3) {
         border-right: none; }
       .main-tabs__item:nth-child(n+4) {
-        border-top: none; } }
+        border-top: none; }
+      .main-tabs__item:last-child {
+        border-bottom: none; } }
   .main-tabs__item + li {
     border-left: 1px solid #E0E3EE; }
     @media screen and (max-width: 600px) {

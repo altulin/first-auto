@@ -1,4 +1,4 @@
-const projectName = `first_auto` // название проекта
+const projectName = `first-auto` // название проекта
 const projectFolder = `${projectName}_dist`; //Папка продакшн
 const sourceFolder = `_src`;  // Папка разработки
 
